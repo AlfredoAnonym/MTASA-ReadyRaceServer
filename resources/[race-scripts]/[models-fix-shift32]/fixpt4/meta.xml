@@ -1,0 +1,6 @@
+<meta>
+<info author="32" type="script"/>
+    <file src="ce_roads37.dff"></file>
+    <file src="ce_roads37.col"></file>
+    <script src="scripts.lua" type="client" validate="true"></script>
+</meta>

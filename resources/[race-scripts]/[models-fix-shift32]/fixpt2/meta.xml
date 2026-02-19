@@ -1,0 +1,33 @@
+<meta>
+<info author="32" type="script"/>
+    <file src="blockaa_las2.dff"></file>
+    <file src="blockaa_las2.col"></file>
+    <file src="cutrdn1_las2.dff"></file>
+    <file src="cutrdn1_las2.col"></file>
+    <file src="landsl01_sfe.dff"></file>
+    <file src="landsl01_sfe.col"></file>
+    <file src="ne_bit_20.dff"></file>
+    <file src="ne_bit_20.col"></file>
+    <file src="nw_bit_09.dff"></file>
+    <file src="nw_bit_09.col"></file>
+    <file src="nw_bit_10.dff"></file>
+    <file src="nw_bit_10.col"></file>
+    <file src="nwrrdssplt_las2.dff"></file>
+    <file src="nwrrdssplt_las2.col"></file>
+    <file src="park2_sfw.dff"></file>
+    <file src="park2_sfw.col"></file>
+    <file src="road_lawn17.dff"></file>
+    <file src="road_lawn17.col"></file>
+    <file src="road_lawn28.dff"></file>
+    <file src="road_lawn28.col"></file>
+    <file src="roads33_law2.dff"></file>
+    <file src="roads33_law2.col"></file>
+    <file src="roadsbx_las2.dff"></file>
+    <file src="roadsbx_las2.col"></file>
+    <file src="roadssfs28.dff"></file>
+    <file src="roadssfs28.col"></file>
+    <file src="sw_bit_03.dff"></file>
+    <file src="sw_bit_03.col"></file>
+    <file src="vgnsqrefnce2.col"></file>
+    <script src="scripts.lua" type="client" validate="true"></script>
+</meta>

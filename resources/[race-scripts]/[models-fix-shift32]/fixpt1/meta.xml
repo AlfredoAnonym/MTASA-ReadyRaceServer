@@ -1,0 +1,22 @@
+<meta>
+	<info author="32" type="script"/>
+    <file src="ceroad_6.dff"></file>
+    <file src="ceroad_6.col"></file>
+   <file src="boigagr_sfw.col"></file>
+   <file src="venetiancpark05.col"></file>
+   <file src="lawnshop1.col"></file>
+  <file src="gangshops1_lae.col"></file>
+    <file src="roads06_law2.dff"></file>
+    <file src="roads06_law2.col"></file>
+    <file src="roads21_law2.dff"></file>
+    <file src="roads21_law2.col"></file>
+    <file src="roads14_law2.dff"></file>
+    <file src="roads14_law2.col"></file>
+    <file src="roads04_law2.dff"></file>
+    <file src="roads04_law2.col"></file>
+    <file src="roads15_law2.dff"></file>
+    <file src="roads15_law2.col"></file>
+    <file src="roads18_law2.dff"></file>
+    <file src="roads18_law2.col"></file>
+    <script src="scripts.lua" type="client" validate="true"></script>
+</meta>

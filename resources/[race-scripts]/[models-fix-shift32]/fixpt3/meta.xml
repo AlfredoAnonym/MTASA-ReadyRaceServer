@@ -1,0 +1,7 @@
+<meta>
+<info author="32" type="script"/>
+    <file src="road_sfw37.dff"></file>
+    <file src="road_sfw37.col"></file>
+    <file src="palomino_fix.col"></file>
+    <script src="scripts.lua" type="client" validate="true"></script>
+</meta>

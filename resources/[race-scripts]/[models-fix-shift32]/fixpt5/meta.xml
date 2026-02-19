@@ -1,0 +1,5 @@
+<meta>
+<info author="32" type="script"/>
+    <file src="ce_roadsign1.dff"></file>
+    <script src="scripts.lua" type="client" validate="true"></script>
+</meta>
