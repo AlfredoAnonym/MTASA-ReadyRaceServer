@@ -1,0 +1,4 @@
+<meta>
+	<info author="MegasXLR" name="Nickname Serial Checker" description="Check player's real nickname via their serial" type="script" version="1.0.0" />
+	<script src="server.lua" type="server" />
+</meta>
