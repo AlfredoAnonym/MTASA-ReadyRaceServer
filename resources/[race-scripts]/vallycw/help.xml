@@ -1,0 +1,20 @@
+<help>
+    <text>
+        --- RACE LEAGUE / CLANWAR COMMANDS ---
+
+        [CAPTAIN COMMANDS]
+        /rd - Readys up your team during warmup or between rounds. Once both captains ready up, the map starts.
+        /tech - Calls a technical pause. Returns the match to warmup and resets the current round.
+
+        [ADMIN COMMANDS]
+        F2 - Opens the Race League / Clanwar Admin Panel.
+        /forcerd - or /forcestart - Forces both teams to be ready and immediately starts the next map.
+        /playerpts [exact_nickname] [amount] - Sets the points of a specific player on the TAB scoreboard manually.
+        /tech - Admins can also force a tech pause at any time.
+
+        [INFO]
+        - In Clanwar mode, maps will not progress until both captains type /rd.
+        - In Player League mode, there is an automatic 60-second warmup timer.
+        - Team colors will automatically be applied to race vehicles and reset upon match completion.
+    </text>
+</help>

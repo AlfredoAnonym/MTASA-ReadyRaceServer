@@ -1,0 +1,17 @@
+<meta>
+    <info author="Gemini_Remix" version="2.0" type="script" name="Race League System" />
+    <script src="rl_server.lua" type="server" />
+    <script src="rl_client.lua" type="client" />
+    <script src="alpha.lua" type="client" />
+    
+    <file src="help.xml" />
+    
+    <aclrequest>
+        <right name="function.startGamemode" access="true" />
+        <right name="function.stopGamemode" access="true" />
+        <right name="function.executeCommandHandler" access="true" />
+        <right name="function.fileCreate" access="true" />
+        <right name="function.fileWrite" access="true" />
+        <right name="function.fileClose" access="true" />
+    </aclrequest>
+</meta>
