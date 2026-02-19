@@ -1,0 +1,7 @@
+Light1 = createSearchLight (160.9, 1933.1, 37.5, 135, 1933.1, 18.3, 0.9, 3, true)
+Light2 = createSearchLight (104, 1900.1, 37.6, 104, 1864.8, 16.7, 0.9, 3, true)
+Light3 = createSearchLight (114.5, 1814.5, 37.5, 147.1, 1814.5, 16.7, 0.9, 3, true)
+Light4 = createSearchLight (165.9, 1850.4, 37.5, 165.9, 1878.8, 19.5, 0.9, 3, true)
+Light5 = createSearchLight (233.5, 1933.8, 37.5, 233.5, 1897.3, 16.7, 0.9, 3, true)
+Light6 = createSearchLight (267.2, 1894.4, 37.5, 267.2, 1864.4, 16.7, 0.9, 3, true)
+Light7 = createSearchLight (262, 1808.7, 37.5, 262, 1839.6, 16.7, 0.9, 3, true)

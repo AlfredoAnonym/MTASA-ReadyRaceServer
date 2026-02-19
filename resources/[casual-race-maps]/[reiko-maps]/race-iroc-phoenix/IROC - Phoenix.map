@@ -1,0 +1,84 @@
+<map edf:definitions="editor_main,race">
+    <checkpoint id="checkpoint () (1)" type="checkpoint" color="#32CD3299" size="12" nextid="checkpoint () (2)" posX="-2455.5" posY="1353.3" posZ="6.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (2)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (3)" posX="-2479.7002" posY="1226.9004" posZ="34.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (3)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (4)" posX="-2607" posY="1204.7002" posZ="34.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (4)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (5)" posX="-2735.6001" posY="1107.8" posZ="45.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (5)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (6)" posX="-2663.3" posY="1192" posZ="54.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (6)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (7)" posX="-2595.2002" posY="1086.7002" posZ="57.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (7)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (8)" posX="-2593.6001" posY="807.20001" posZ="48.9" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (8)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (9)" posX="-2395.8999" posY="808.40002" posZ="34.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (9)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (10)" posX="-2377.3999" posY="958.29999" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (10)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (11)" posX="-2232.3994" posY="918.7002" posZ="65.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (11)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (12)" posX="-2143.0996" posY="941.40039" posZ="78.9" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (12)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (13)" posX="-2163.2998" posY="1094.4004" posZ="78.9" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (13)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (14)" posX="-2260.7998" posY="1076" posZ="79.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (14)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (15)" posX="-2236.3994" posY="919.2002" posZ="65.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (15)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (16)" posX="-2143.0996" posY="940.7002" posZ="78.9" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (16)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (17)" posX="-2116.3999" posY="1176.9" posZ="54.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (17)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (18)" posX="-1924.6" posY="1176.3" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (18)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (19)" posX="-1884.7002" posY="1043" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (19)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (20)" posX="-1899.1" posY="860" posZ="34.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (20)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (21)" posX="-1740.1" posY="844.70001" posZ="23.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (21)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (22)" posX="-1690.4004" posY="925.2998" posZ="23.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (22)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (23)" posX="-1576.5996" posY="925.5" posZ="6.4" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (23)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (24)" posX="-1582.7002" posY="731.2998" posZ="6.7" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (24)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (25)" posX="-1899.5" posY="720.59961" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (25)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (26)" posX="-1899.0996" posY="608.2998" posZ="34.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (26)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (27)" posX="-1736.2002" posY="609" posZ="23.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (27)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (28)" posX="-1714.3" posY="795" posZ="23.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (28)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (29)" posX="-1794.2002" posY="865.5" posZ="23.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (29)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (30)" posX="-1801.0996" posY="1103.4004" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (30)" type="checkpoint" color="#32CD3299" size="12" alpha="255" interior="0" nextid="checkpoint () (31)" posX="-2004.2" posY="1039.8" posZ="54.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (31)" type="checkpoint" color="#FFFFFFC8" size="12" alpha="255" interior="0" posX="-2004.2" posY="934.5" posZ="44.3" rotX="0" rotY="0" rotZ="0"></checkpoint>
+
+    <spawnpoint id="spawnpoint (Phoenix) (1)" vehicle="603" posX="-2519.7" posY="1380.6" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (2)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (3)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (4)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (5)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (6)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (7)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (8)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (9)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (10)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (11)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (12)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (13)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (14)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (15)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (16)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (17)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (18)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (19)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (20)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (21)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (22)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (23)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (24)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (25)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (26)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (27)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (28)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (29)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (30)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (31)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (32)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (33)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (34)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (35)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (36)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (37)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (38)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (39)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (40)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (41)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (42)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (43)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (44)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (45)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (46)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (47)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (48)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (49)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+    <spawnpoint id="spawnpoint (Phoenix) (50)" vehicle="603" alpha="255" interior="0" posX="-2519.7002" posY="1380.5996" posZ="7" rotX="0" rotY="0" rotZ="270"></spawnpoint>
+</map>

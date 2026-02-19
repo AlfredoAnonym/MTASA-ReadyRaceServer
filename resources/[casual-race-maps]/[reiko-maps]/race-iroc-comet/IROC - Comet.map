@@ -1,0 +1,81 @@
+<map edf:definitions="editor_main,race">
+    <checkpoint id="checkpoint () (1)" type="checkpoint" color="#00FFFF99" size="12" nextid="checkpoint () (2)" posX="232.7" posY="33.1" posZ="1.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (2)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (3)" posX="238" posY="-71.9" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (3)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (4)" posX="325.5" posY="-71.8" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (4)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (5)" posX="332.89999" posY="-200.2" posZ="-0.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (5)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (6)" posX="188.10001" posY="-211.89999" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (6)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (7)" posX="202.2" posY="-356.79999" posZ="3.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (7)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (8)" posX="-116.8" posY="-403" posZ="0.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (8)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (9)" posX="-300.60001" posY="-175.7" posZ="0.1" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (9)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (10)" posX="-103.4" posY="-129.10001" posZ="2.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (10)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (11)" posX="137.8" posY="-71.8" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (11)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (12)" posX="282.70001" posY="-76.2" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (12)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (13)" posX="282.79999" posY="-207.2" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (13)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (14)" posX="234.7" posY="-211.8" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (14)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (15)" posX="208" posY="-300.89999" posZ="0.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (15)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (16)" posX="309.20001" posY="-372.10001" posZ="8.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (16)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (17)" posX="520.79999" posY="-269.5" posZ="8.5" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (17)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (18)" posX="810.40002" posY="-289.29999" posZ="19.4" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (18)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (19)" posX="1018" posY="-338.10001" posZ="77.8" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (19)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (20)" posX="1008.5" posY="-466.89999" posZ="49.6" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (20)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (21)" posX="821.59998" posY="-529.59998" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (21)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (22)" posX="723.09998" posY="-530.29999" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (22)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (23)" posX="706.20001" posY="-484.29999" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (23)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (24)" posX="604.70001" posY="-485.5" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (24)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (25)" posX="614.40002" posY="-530.09998" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (25)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (26)" posX="719" posY="-530.09998" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (26)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (27)" posX="720.79999" posY="-597.29999" posZ="15.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (27)" type="checkpoint" color="#00FFFF99" size="12" alpha="255" interior="0" nextid="checkpoint () (28)" posX="558.90002" posY="-633" posZ="25.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (28)" type="checkpoint" color="#FFFFFFFF" size="12" alpha="255" interior="0" posX="354.10001" posY="-574" posZ="39.2" rotX="0" rotY="0" rotZ="0"></checkpoint>
+
+    <spawnpoint id="spawnpoint (Comet) (1)" vehicle="480" posX="362.5" posY="113.2" posZ="5.2" rotX="0" rotY="0" rotZ="127"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (2)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (3)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (4)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (5)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (6)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (7)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (8)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (9)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (10)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (11)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (12)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (13)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (14)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (15)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (16)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (17)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (18)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (19)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (20)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (21)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (22)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (23)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (24)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (25)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (26)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (27)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (28)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (29)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (30)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (31)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (32)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (33)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (34)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (35)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (36)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (37)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (38)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (39)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (40)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (41)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (42)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (43)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (44)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (45)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (46)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (47)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (48)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (49)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="127"></spawnpoint>
+    <spawnpoint id="spawnpoint (Comet) (50)" vehicle="480" alpha="255" interior="0" posX="362.5" posY="113.2002" posZ="5.2" rotX="0" rotY="0" rotZ="126.996"></spawnpoint>
+</map>

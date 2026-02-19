@@ -1,0 +1,15 @@
+﻿car1 = createVehicle ( 445, -2037.6, -344.7, 35.3, 0, 0, 263 )
+setVehiclePanelState ( car1, 4, 2 )
+setVehiclePanelState ( car1, 5, 2 )
+setVehiclePanelState ( car1, 6, 2 )
+setVehicleDoorState ( car1, 0, 4 )
+setVehicleDoorState ( car1, 2, 4 )
+
+car2 = createVehicle ( 467, -2031.8, -347.2, 35.2, 0, 0, 48 )
+setVehiclePanelState ( car2, 4, 2 )
+setVehiclePanelState ( car2, 5, 2 )
+setVehiclePanelState ( car2, 6, 2 )
+setVehicleDoorState ( car2, 0, 4 )
+setVehicleDoorState ( car2, 3, 4 )
+
+createEffect("fire_large", -2034.1, -345.5, 34, 0, 0, 0, 400)
