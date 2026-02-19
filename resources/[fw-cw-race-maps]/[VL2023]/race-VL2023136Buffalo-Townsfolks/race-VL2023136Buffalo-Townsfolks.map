@@ -1,0 +1,79 @@
+<map edf:definitions="editor_main,race">
+    <spawnpoint id="spawnpoint (Buffalo) (1)" vehicle="402" posX="2343.925" posY="242.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <checkpoint id="checkpoint () (1)" type="checkpoint" color="#FFFF0099" size="6" nextid="checkpoint () (2)" posX="2335.2361" posY="384.33099" posZ="25.789" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (2)" type="checkpoint" color="#FFFF0099" size="6" alpha="255" interior="0" nextid="checkpoint () (3)" posX="2277.2871" posY="346.69" posZ="31.743" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (3)" type="checkpoint" color="#FFFF0099" size="6" alpha="255" interior="0" nextid="checkpoint () (4)" posX="2407.7629" posY="346.05899" posZ="31.779" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (4)" type="checkpoint" color="#FFFF0099" size="8" alpha="255" interior="0" nextid="checkpoint () (5)" posX="2343.865" posY="364.103" posZ="25.604" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (5)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (6)" posX="2330.5791" posY="91.42" posZ="25.378" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (6)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (7)" posX="2223.905" posY="80.153" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (7)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (8)" posX="2235.3931" posY="-98.242" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (8)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (9)" posX="2344.8679" posY="-83.947" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (9)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (10)" posX="2352.832" posY="-28.611" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (10)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (11)" posX="2463.741" posY="-13.791" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (11)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (12)" posX="2471.8789" posY="42.549" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (12)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (13)" posX="2534.332" posY="55.573" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (13)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (14)" posX="2521.6079" posY="112.188" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (14)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (15)" posX="2464.3291" posY="102.982" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (15)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (16)" posX="2453.2439" posY="41.048" posZ="25.378" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (16)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (17)" posX="2394.2251" posY="29.874" posZ="25.381" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (17)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (18)" posX="2380.509" posY="-27.664" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (18)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (19)" posX="2293.3611" posY="-18.153" posZ="25.378" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (19)" type="checkpoint" color="#FFFF0099" size="6" alpha="255" interior="0" nextid="checkpoint () (20)" posX="2300.1011" posY="189.668" posZ="25.596" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (20)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (21)" posX="2132.583" posY="243.388" posZ="13.752" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (21)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (22)" posX="1857.124" posY="266.552" posZ="24.137" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (22)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (23)" posX="1541.583" posY="253.71899" posZ="14.956" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (23)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (24)" posX="1406.876" posY="203.265" posZ="18.549" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (24)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (25)" posX="1283.875" posY="237.31599" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (25)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (26)" posX="1246.072" posY="187.771" posZ="18.446" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (26)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (27)" posX="1223.099" posY="217.94299" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (27)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (28)" posX="1230.674" posY="276.38599" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (28)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (29)" posX="1231.042" posY="349.39999" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (29)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (30)" posX="1323.311" posY="324.91901" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (30)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (31)" posX="1328.3311" posY="363.55399" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (31)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (32)" posX="1288.067" posY="370.58899" posZ="18.452" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (32)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (33)" posX="1281.512" posY="329.42099" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (33)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (34)" posX="1314.521" posY="302.909" posZ="18.45" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (34)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (35)" posX="1298.601" posY="244.46201" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (35)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (36)" posX="1387.28" posY="219.71899" posZ="18.445" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (36)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (37)" posX="1428.281" posY="299.72699" posZ="18.287" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (37)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (38)" posX="1602.785" posY="382.51999" posZ="18.921" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (38)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (39)" posX="1988.723" posY="353.43301" posZ="25.484" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (39)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (40)" posX="2153.1841" posY="238.755" posZ="13.543" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (40)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint (Trailer (Tanker Commando)) (1)" posX="2342.894" posY="201.52499" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint (Trailer (Tanker Commando)) (1)" type="checkpoint" color="#FFFF0099" vehicle="584" size="11" alpha="255" interior="0" posX="2343.5879" posY="25.147" posZ="25.374" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (2)" vehicle="402" alpha="255" interior="0" posX="2335.425" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (3)" vehicle="402" alpha="255" interior="0" posX="2338.425" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (4)" vehicle="402" alpha="255" interior="0" posX="2342.175" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (5)" vehicle="402" alpha="255" interior="0" posX="2345.675" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (6)" vehicle="402" alpha="255" interior="0" posX="2348.675" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (7)" vehicle="402" alpha="255" interior="0" posX="2352.175" posY="232.42599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (8)" vehicle="402" alpha="255" interior="0" posX="2352.175" posY="223.17599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (9)" vehicle="402" alpha="255" interior="0" posX="2348.5691" posY="223.01801" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (10)" vehicle="402" alpha="255" interior="0" posX="2344.925" posY="223.17599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (11)" vehicle="402" alpha="255" interior="0" posX="2340.425" posY="223.17599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (12)" vehicle="402" alpha="255" interior="0" posX="2336.675" posY="223.17599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (13)" vehicle="402" alpha="255" interior="0" posX="2336.675" posY="214.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (14)" vehicle="402" alpha="255" interior="0" posX="2340.425" posY="214.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (15)" vehicle="402" alpha="255" interior="0" posX="2344.425" posY="214.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (16)" vehicle="402" alpha="255" interior="0" posX="2347.925" posY="214.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (17)" vehicle="402" alpha="255" interior="0" posX="2351.675" posY="214.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (18)" vehicle="402" alpha="255" interior="0" posX="2351.675" posY="204.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (19)" vehicle="402" alpha="255" interior="0" posX="2347.925" posY="204.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (20)" vehicle="402" alpha="255" interior="0" posX="2344.175" posY="204.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (21)" vehicle="402" alpha="255" interior="0" posX="2340.425" posY="204.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (22)" vehicle="402" alpha="255" interior="0" posX="2336.675" posY="204.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (23)" vehicle="402" alpha="255" interior="0" posX="2336.675" posY="196.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (24)" vehicle="402" alpha="255" interior="0" posX="2340.425" posY="196.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (25)" vehicle="402" alpha="255" interior="0" posX="2344.675" posY="196.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (26)" vehicle="402" alpha="255" interior="0" posX="2348.175" posY="196.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (27)" vehicle="402" alpha="255" interior="0" posX="2351.675" posY="196.67599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (28)" vehicle="402" alpha="255" interior="0" posX="2351.675" posY="189.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (29)" vehicle="402" alpha="255" interior="0" posX="2347.425" posY="189.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (30)" vehicle="402" alpha="255" interior="0" posX="2343.425" posY="189.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (31)" vehicle="402" alpha="255" interior="0" posX="2339.675" posY="189.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <spawnpoint id="spawnpoint (Buffalo) (32)" vehicle="402" alpha="255" interior="0" posX="2335.675" posY="189.92599" posZ="26.276" rotX="0" rotY="0" rotZ="0"></spawnpoint>
+    <object id="object (shark) (1)" breakable="true" interior="0" alpha="255" model="1608" doublesided="false" scale="1" dimension="0" MSTalpha="255" posX="2329.157" posY="277.27802" posZ="28.576" rotX="0" rotY="0" rotZ="210"></object>
+    <racepickup id="racepickup (NRG-500) (1)" type="repair" vehicle="522" respawn="0" posX="2343.9951" posY="339.745" posZ="25.096" rotX="0" rotY="0" rotZ="315"></racepickup>
+    <racepickup id="racepickup (NRG-500) (6)" type="repair" vehicle="522" respawn="0" alpha="255" interior="0" posX="2340.7451" posY="339.745" posZ="25.096" rotX="0" rotY="0" rotZ="321.12"></racepickup>
+    <racepickup id="racepickup (NRG-500) (7)" type="repair" vehicle="522" respawn="0" alpha="255" interior="0" posX="2347.27" posY="339.745" posZ="25.096" rotX="0" rotY="0" rotZ="104.94"></racepickup>
+</map>

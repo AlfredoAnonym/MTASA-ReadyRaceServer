@@ -1,0 +1,76 @@
+<map edf:definitions="editor_main,race">
+    <spawnpoint id="spawnpoint (FBI Truck) (1)" vehicle="528" posX="1307.073" posY="-1280.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <checkpoint id="checkpoint () (1)" type="checkpoint" color="#FFFF0099" size="11" nextid="checkpoint () (2)" posX="1058.9771" posY="-1294.027" posZ="12.768" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (2)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (3)" posX="1075.584" posY="-1401.759" posZ="12.566" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (3)" type="checkpoint" color="#FFFF0099" size="18" alpha="255" interior="0" nextid="checkpoint () (4)" posX="1349.793" posY="-1419.917" posZ="12.585" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (4)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (5)" posX="1270.553" posY="-1572.6121" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (5)" type="checkpoint" color="#FFFF0099" size="16" alpha="255" interior="0" nextid="checkpoint () (6)" posX="1202.309" posY="-1552.526" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (6)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (7)" posX="1209.491" posY="-1146.949" posZ="22.562" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (7)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (8)" posX="1059.233" posY="-1161.031" posZ="22.712" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (8)" type="checkpoint" color="#FFFF0099" size="16" alpha="255" interior="0" nextid="checkpoint () (9)" posX="1041.4" posY="-1401.024" posZ="12.375" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (9)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (10)" posX="797.72998" posY="-1386.245" posZ="12.48" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (10)" type="checkpoint" color="#FFFF0099" size="15" alpha="255" interior="0" nextid="checkpoint () (11)" posX="818.87598" posY="-1324.748" posZ="12.511" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (11)" type="checkpoint" color="#FFFF0099" size="16" alpha="255" interior="0" nextid="checkpoint () (12)" posX="1056.829" posY="-1340.264" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (12)" type="checkpoint" color="#FFFF0099" size="15" alpha="255" interior="0" nextid="checkpoint () (13)" posX="1040.455" posY="-1496.121" posZ="12.429" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (13)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (14)" posX="917.85498" posY="-1477.8521" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (14)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (15)" posX="952.802" posY="-1221.772" posZ="15.773" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (15)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (16)" posX="1057.78" posY="-1209.136" posZ="16.393" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (16)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (17)" posX="1045.6169" posY="-1145.449" posZ="22.71" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (17)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (18)" posX="943.44098" posY="-1161.4399" posZ="22.253" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (18)" type="checkpoint" color="#FFFF0099" size="14" alpha="255" interior="0" nextid="checkpoint () (19)" posX="930.37097" posY="-1323.321" posZ="12.435" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (19)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (20)" posX="797.21997" posY="-1306.316" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (20)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (21)" posX="784.74103" posY="-1152.4969" posZ="22.586" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (21)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (22)" posX="672.91803" posY="-1320.769" posZ="12.52" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (22)" type="checkpoint" color="#FFFF0099" size="12" alpha="255" interior="0" nextid="checkpoint () (23)" posX="801.13397" posY="-1331.83" posZ="12.421" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (23)" type="checkpoint" color="#FFFF0099" size="15" alpha="255" interior="0" nextid="checkpoint () (24)" posX="784.39899" posY="-1401.241" posZ="12.406" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (24)" type="checkpoint" color="#FFFF0099" size="22" alpha="255" interior="0" nextid="checkpoint () (25)" posX="631.57397" posY="-1427.083" posZ="12.792" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (25)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (26)" posX="649.75897" posY="-1586.734" posZ="14.411" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (26)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint () (27)" posX="770.72498" posY="-1573.686" posZ="12.424" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (27)" type="checkpoint" color="#FFFF0099" size="15" alpha="255" interior="0" nextid="checkpoint () (28)" posX="784.52502" posY="-1400.948" posZ="12.354" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (28)" type="checkpoint" color="#FFFF0099" size="16" alpha="255" interior="0" nextid="checkpoint () (29)" posX="633.98297" posY="-1383.13" posZ="12.591" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint () (29)" type="checkpoint" color="#FFFF0099" size="11" alpha="255" interior="0" nextid="checkpoint (Trailer (Tanker Commando)) (1)" posX="650.323" posY="-1320.2371" posZ="12.36" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <checkpoint id="checkpoint (Trailer (Tanker Commando)) (1)" type="checkpoint" color="#FFFF0099" vehicle="584" size="15" alpha="255" interior="0" posX="895.64502" posY="-1322.7061" posZ="12.598" rotX="0" rotY="0" rotZ="0"></checkpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (2)" vehicle="528" alpha="255" interior="0" posX="1314.573" posY="-1289.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (3)" vehicle="528" alpha="255" interior="0" posX="1314.573" posY="-1286.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (4)" vehicle="528" alpha="255" interior="0" posX="1314.573" posY="-1282.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (5)" vehicle="528" alpha="255" interior="0" posX="1314.573" posY="-1279.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (6)" vehicle="528" alpha="255" interior="0" posX="1314.573" posY="-1273.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (7)" vehicle="528" alpha="255" interior="0" posX="1321.823" posY="-1273.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (8)" vehicle="528" alpha="255" interior="0" posX="1321.823" posY="-1276.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (9)" vehicle="528" alpha="255" interior="0" posX="1321.823" posY="-1279.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (10)" vehicle="528" alpha="255" interior="0" posX="1321.823" posY="-1283.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (11)" vehicle="528" alpha="255" interior="0" posX="1321.823" posY="-1288.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (12)" vehicle="528" alpha="255" interior="0" posX="1329.073" posY="-1288.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (13)" vehicle="528" alpha="255" interior="0" posX="1329.073" posY="-1284.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (14)" vehicle="528" alpha="255" interior="0" posX="1329.073" posY="-1280.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (15)" vehicle="528" alpha="255" interior="0" posX="1329.073" posY="-1277.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (16)" vehicle="528" alpha="255" interior="0" posX="1329.073" posY="-1273.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (17)" vehicle="528" alpha="255" interior="0" posX="1335.823" posY="-1273.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (18)" vehicle="528" alpha="255" interior="0" posX="1335.823" posY="-1277.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (19)" vehicle="528" alpha="255" interior="0" posX="1335.823" posY="-1280.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (20)" vehicle="528" alpha="255" interior="0" posX="1335.823" posY="-1283.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (21)" vehicle="528" alpha="255" interior="0" posX="1335.823" posY="-1288.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (22)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1288.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (23)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1285.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (24)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1281.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (25)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1279.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (26)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1275.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (27)" vehicle="528" alpha="255" interior="0" posX="1343.073" posY="-1272.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (28)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1272.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (29)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1275.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (30)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1278.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (31)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1282.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (32)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1286.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (33)" vehicle="528" alpha="255" interior="0" posX="1350.323" posY="-1289.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (34)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1289.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (35)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1285.903" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (36)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1282.403" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (37)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1279.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (38)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1275.653" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <spawnpoint id="spawnpoint (FBI Truck) (39)" vehicle="528" alpha="255" interior="0" posX="1358.323" posY="-1272.153" posZ="13.568" rotX="0" rotY="0" rotZ="90"></spawnpoint>
+    <object id="object (shark) (1)" breakable="true" interior="0" alpha="255" model="1608" doublesided="false" scale="1" dimension="0" MSTalpha="255" posX="1264.748" posY="-1270.5389" posZ="18.2" rotX="0" rotY="0" rotZ="240"></object>
+    <racepickup id="racepickup (NRG-500) (1)" type="nitro" vehicle="522" respawn="0" posX="1166.09" posY="-1209.736" posZ="17.551" rotX="0" rotY="0" rotZ="31.32"></racepickup>
+    <racepickup id="racepickup (NRG-500) (2)" type="nitro" vehicle="522" respawn="0" alpha="255" interior="0" posX="1166.09" posY="-1206.786" posZ="17.551" rotX="0" rotY="0" rotZ="346.5"></racepickup>
+    <racepickup id="racepickup (NRG-500) (3)" type="nitro" vehicle="522" respawn="0" alpha="255" interior="0" posX="1166.09" posY="-1202.786" posZ="17.551" rotX="0" rotY="0" rotZ="115.56"></racepickup>
+    <racepickup id="racepickup (NRG-500) (4)" type="vehiclechange" vehicle="522" respawn="0" posX="1255.038" posY="-1167.339" posZ="25.888" rotX="0" rotY="0" rotZ="307.26"></racepickup>
+</map>
