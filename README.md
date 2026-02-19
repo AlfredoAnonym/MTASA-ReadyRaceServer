@@ -1,4 +1,6 @@
 # MTASA-ReadyRaceServer
+# READ EVERYTHING! VERY IMPORTANT
+
 A ready race server repository. Contains various scripts that racing servers use and some new scripts too. Ready for casual racing or pro racing.
 
 Will contain most important scripts, like Pole Remover (it will not work from the start of the server, don't worry) Offroad Wheels and much more. There will be also a classic clanwar script by Vally, redesigned and remixed.
@@ -22,4 +24,5 @@ Installation:
 
 - First off, do not wipe everything from resources. Only wipe the [addons] and [maps] folder from the [race] gamemodes folder. You can also keep voicepack or whatever I don't use it, but if you delete it it might cause you some warnings
 - Put everything (or replace some stuff) to your server resources folder. Replacing i mean one thing in gamemodes / race / race client and server.lua to support onSpectateRequest so it warps people to spectator mode if clanwar script is running and they are in the spectators team
+- Important thing: First off, type in the server console aclrequest list and check if any of the resources need acl requests, if they do - type aclrequest allow all or aclrequest allow (resource name) <right> or all. Then you'll give all the scripts that need this acl rights so they can function properly.
 
