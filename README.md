@@ -1,9 +1,7 @@
 # MTASA-ReadyRaceServer
 # READ EVERYTHING! VERY IMPORTANT
 
-A ready race server repository. Contains various scripts that racing servers use and some new scripts too. Ready for casual racing or pro racing.
-
-Will contain most important scripts, like Pole Remover (it will not work from the start of the server, don't worry) Offroad Wheels and much more. There will be also a classic clanwar script by Vally, redesigned and remixed.
+A ready race server repository. Contains various scripts that racing servers use and some new scripts too with maps. Ready for casual racing or pro racing. It has around 800-900 vanilla RACE maps, and 100-200 casual maps. It has most important scripts for pro racing, like Pole Remover that's required in some maps, offroad Wheels and much more. There is also well known RACE clanwar script by Vally, that has been redesigned
 
 Map Uploader script info:
 
