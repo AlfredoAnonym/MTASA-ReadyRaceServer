@@ -1,0 +1,5 @@
+<meta>
+	<info author="Chris" version="1.0" type="script" name="Auto Login" description="Allows auto login with /autologin!" />
+	<script src="autoLogin.lua" type="client" />
+	<script src="autoLogin-s.lua" type="server" />
+</meta>
