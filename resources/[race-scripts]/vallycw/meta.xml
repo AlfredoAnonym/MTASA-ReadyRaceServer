@@ -2,7 +2,6 @@
     <info author="Gemini_Remix" version="2.0" type="script" name="Race League System" />
     <script src="rl_server.lua" type="server" />
     <script src="rl_client.lua" type="client" />
-    <script src="alpha.lua" type="client" />
     
     <file src="help.xml" />
     

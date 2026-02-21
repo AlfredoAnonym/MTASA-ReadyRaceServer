@@ -59,15 +59,17 @@ end
 -- DISPLAY
 ------------------------
 function updateDisplay()
-    -- Scoreboard / HUD
     if isElement(teams[1]) and isHudVisible then
         
+        -- Configurable Box Parameters
+        local boxWidth = 220 
+        local startX = s_x - boxWidth - 20
+        local centerX = startX + (boxWidth / 2)
         local baseY = 250 
-        local textY = baseY + 75 -- Relative text start point
         
         if not f_round then
-            -- Calculate Dynamic Height for League Mode
-            local hudHeight = 135 -- Default height for Clanwar
+            local hudHeight = 110 -- Tighter default height for Classic mode
+            local textY = baseY + 25 
             
             local ranked = {}
             if isLeagueMode then
@@ -81,70 +83,72 @@ function updateDisplay()
                     return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) 
                 end)
                 
-                -- Resize background based on player count
                 local playerCount = math.min(5, #ranked)
-                hudHeight = 40 + (playerCount * 15)
-                if playerCount == 0 then hudHeight = 40 end
+                hudHeight = 45 + (playerCount * 20)
+                if playerCount == 0 then hudHeight = 45 end
                 
                 textY = baseY + 20 
             end
 
             -- Background
-            dxDrawRectangle(s_x-187.5, baseY, 122.5, hudHeight, tocolor(0, 0, 0, 150))
+            dxDrawRectangle(startX, baseY, boxWidth, hudHeight, tocolor(0, 0, 0, 160))
             
             if c_round == m_round then
-                dxDrawText('FINAL ROUND', s_x-127.5, textY, s_x-127.5, textY, tocolor ( 255, 255, 0, 255 ), 1.2, "default-bold", 'center', 'center')
+                dxDrawText('FINAL ROUND', centerX, textY, centerX, textY, tocolor(255, 255, 0, 255), 1.2, "default-bold", 'center', 'center')
             else
-                dxDrawText('Round ' ..c_round.. ' of ' ..m_round, s_x-127.5, textY, s_x-127.5, textY, tocolor ( 255, 255, 150, 255 ), 1.2, "default", 'center', 'center')
+                dxDrawText('Round ' ..c_round.. ' of ' ..m_round, centerX, textY, centerX, textY, tocolor(255, 255, 150, 255), 1.2, "default-bold", 'center', 'center')
             end
             
             if isLeagueMode then
-                -- LEAGUE MODE: Show Individual Players
-                local y_off = 20
+                local y_off = 25
                 for i=1, math.min(5, #ranked) do
                     local p = ranked[i]
                     local score = getElementData(p, "Score") or 0
                     local name = getPlayerName(p):gsub("#%x%x%x%x%x%x", "")
                     local r, g, b = getPlayerNametagColor(p)
                     
-                    if #name > 12 then name = string.sub(name, 1, 10)..".." end
+                    if #name > 15 then name = string.sub(name, 1, 13)..".." end
                     
-                    dxDrawText(i..". "..name.. ' : ' ..score, s_x-127.5, textY + y_off, s_x-127.5, textY + y_off, tocolor ( r, g, b, 255 ), 1.0, "default-bold", 'center', 'center')
-                    y_off = y_off + 15
+                    dxDrawText(i..". "..name.. ' : ' ..score, centerX, textY + y_off, centerX, textY + y_off, tocolor(r, g, b, 255), 1.0, "default-bold", 'center', 'center')
+                    y_off = y_off + 20
                 end
             elseif isElement(teams[2]) then
-                -- CLANWAR MODE: Show Team Scores
-                textY = baseY + 75 
-                
                 local r1, g1, b1 = getTeamColor(teams[1])
                 local r2, g2, b2 = getTeamColor(teams[2])
                 local t1s = tonumber(getElementData(teams[1], 'Score')) or 0
                 local t2s = tonumber(getElementData(teams[2], 'Score')) or 0
 
+                local t1n = getTeamName(teams[1])
+                local t2n = getTeamName(teams[2])
+                if #t1n > 15 then t1n = string.sub(t1n, 1, 13)..".." end
+                if #t2n > 15 then t2n = string.sub(t2n, 1, 13)..".." end
+                
+                local t1Y = textY + 30
+                local t2Y = textY + 60
+
                 if t1s > t2s then
-                    dxDrawText(getTeamName(teams[1]).. ' - ' ..t1s, s_x-127.5, textY+5+text_offset, s_x-127.5, textY+5+text_offset, tocolor ( r1, g1, b1, 255 ), 1.4, "default", 'center', 'center')
-                    dxDrawText(getTeamName(teams[2]).. ' - ' ..t2s, s_x-127.5, textY+5+text_offset*2, s_x-127.5, textY+5+text_offset*2, tocolor ( r2, g2, b2, 255 ), 1.2, "default", 'center', 'center')
+                    dxDrawText(t1n.. ' - ' ..t1s, centerX, t1Y, centerX, t1Y, tocolor(r1, g1, b1, 255), 1.4, "default-bold", 'center', 'center')
+                    dxDrawText(t2n.. ' - ' ..t2s, centerX, t2Y, centerX, t2Y, tocolor(r2, g2, b2, 255), 1.2, "default-bold", 'center', 'center')
                 else
-                    dxDrawText(getTeamName(teams[2]).. ' - ' ..t2s, s_x-127.5, textY+5+text_offset, s_x-127.5, textY+5+text_offset, tocolor ( r2, g2, b2, 255 ), 1.4, "default", 'center', 'center')
-                    dxDrawText(getTeamName(teams[1]).. ' - ' ..t1s, s_x-127.5, textY+5+text_offset*2, s_x-127.5, textY+5+text_offset*2, tocolor ( r1, g1, b1, 255 ), 1.2, "default", 'center', 'center')
+                    dxDrawText(t2n.. ' - ' ..t2s, centerX, t1Y, centerX, t1Y, tocolor(r2, g2, b2, 255), 1.4, "default-bold", 'center', 'center')
+                    dxDrawText(t1n.. ' - ' ..t1s, centerX, t2Y, centerX, t2Y, tocolor(r1, g1, b1, 255), 1.2, "default-bold", 'center', 'center')
                 end
             end
         else
-            -- WARMUP / PAUSE DISPLAY
-            dxDrawRectangle(s_x-187.5, baseY, 122.5, 80, tocolor(0, 0, 0, 150))
-            local warmTextY = baseY + 40
+            dxDrawRectangle(startX, baseY, boxWidth, 80, tocolor(0, 0, 0, 160))
+            local warmTextY = baseY + 25
             
             if isTechPause then
-                dxDrawText('TECH PAUSE', s_x-125, warmTextY, s_x-125, warmTextY, tocolor ( 255, 0, 0, 255 ), 1.2, "default-bold", 'center', 'center')
-                dxDrawText('Wait for Captains', s_x-125, warmTextY+25, s_x-125, warmTextY+25, tocolor ( 255, 200, 200, 255 ), 1.0, "default", 'center', 'center')
+                dxDrawText('TECH PAUSE', centerX, warmTextY, centerX, warmTextY, tocolor(255, 0, 0, 255), 1.2, "default-bold", 'center', 'center')
+                dxDrawText('Wait for Captains', centerX, warmTextY+25, centerX, warmTextY+25, tocolor(255, 200, 200, 255), 1.0, "default-bold", 'center', 'center')
             else
-                dxDrawText('WARMUP', s_x-125, warmTextY, s_x-125, warmTextY, tocolor ( 255, 255, 255, 255 ), 1.2, "default-bold", 'center', 'center')
+                dxDrawText('WARMUP', centerX, warmTextY, centerX, warmTextY, tocolor(255, 255, 255, 255), 1.2, "default-bold", 'center', 'center')
                 
                 if isLeagueMode and leagueWarmupEndTime > 0 then
                     local remaining = math.max(0, math.floor((leagueWarmupEndTime - getTickCount()) / 1000))
-                    dxDrawText('Starts in: '..remaining..'s', s_x-125, warmTextY+25, s_x-125, warmTextY+25, tocolor ( 200, 200, 200, 255 ), 1.0, "default", 'center', 'center')
+                    dxDrawText('Starts in: '..remaining..'s', centerX, warmTextY+25, centerX, warmTextY+25, tocolor(200, 200, 200, 255), 1.0, "default-bold", 'center', 'center')
                 else
-                    dxDrawText('Wait for Ready', s_x-125, warmTextY+25, s_x-125, warmTextY+25, tocolor ( 200, 200, 200, 255 ), 1.0, "default", 'center', 'center')
+                    dxDrawText('Wait for Ready', centerX, warmTextY+25, centerX, warmTextY+25, tocolor(200, 200, 200, 255), 1.0, "default-bold", 'center', 'center')
                 end
             end
         end
@@ -365,6 +369,31 @@ function createAdminGUI()
     addEventHandler("onClientGUIClick", btn_rem, removeMapFromQueue, false)
     
     serverCall("requestMapList")
+
+    -- === TAB 4: HELP / COMMANDS ===
+    local tab_help = guiCreateTab('Help / Commands', tab_panel)
+    local helpText = [[
+--- RACE LEAGUE / CLANWAR COMMANDS ---
+
+[CAPTAIN COMMANDS]
+/rd - Readys up your team during warmup or between rounds.
+/tech - Calls a technical pause. Returns the match to warmup and resets current round.
+
+[ADMIN / REFEREE COMMANDS]
+F2 - Opens the Race League / Clanwar Admin Panel.
+/forcerd - or /forcestart - Forces both teams to be ready and starts the map.
+/playerpts [exact_nickname] [amount] - Sets the points of a specific player manually.
+/tech - Admins can force a tech pause at any time (locked 10s after map starts).
+/redo - Restarts the map (locked 10s after map starts).
+/mvp [nick] [t1/t2/spec] - Moves a player to a specific team (ignores hex colors).
+
+[INFO]
+- Clanwar maps will not progress until both captains type /rd.
+- Player League mode has an automatic 60-second warmup timer.
+- Team colors are applied to race vehicles and reset upon match completion.
+]]
+    local memo_help = guiCreateMemo(10, 10, 610, 310, helpText, false, tab_help)
+    guiMemoSetReadOnly(memo_help, true)
 
     local btn_close = guiCreateButton(10, 365, 630, 25, "Close Panel", false, a_window)
     addEventHandler("onClientGUIClick", btn_close, function() guiSetVisible(a_window, false) showCursor(false) end, false)

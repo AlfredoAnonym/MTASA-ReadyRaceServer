@@ -68,31 +68,40 @@ addEventHandler("onClientCallsServerFunction", resourceRoot, function(funcname, 
         if isAdmin(client) then setCaptains(args[1], args[2]) end
     elseif funcname == "adminUpdateScores" then
         if isAdmin(client) then
-            if not isElement(teams[1]) then
-                outputChatBox("[RL] Error: No active match to update.", client, 255, 0, 0)
-                return
-            end
-
             local t1s_new = tonumber(args[1]) or 0
             local t2s_new = tonumber(args[2]) or 0
             local cr_new = tonumber(args[3]) or 0
             local mr_new = tonumber(args[4]) or rounds
 
-            local t1s_old = tonumber(getElementData(teams[1], "Score")) or 0
-            local t2s_old = (isElement(teams[2]) and tonumber(getElementData(teams[2], "Score"))) or 0
             local cr_old = c_round
             local mr_old = rounds
             
-            setElementData(teams[1], "Score", t1s_new)
-            if isElement(teams[2]) then setElementData(teams[2], "Score", t2s_new) end
             c_round = cr_new
             rounds = mr_new
             
             local changes = {}
-            if t1s_old ~= t1s_new then table.insert(changes, "T1: "..t1s_old.." -> "..t1s_new) end
-            if isElement(teams[2]) and t2s_old ~= t2s_new then table.insert(changes, "T2: "..t2s_old.." -> "..t2s_new) end
             if cr_old ~= cr_new then table.insert(changes, "Round: "..cr_old.." -> "..c_round) end
             if mr_old ~= mr_new then table.insert(changes, "MaxRounds: "..mr_old.." -> "..rounds) end
+            
+            -- If match has NOT started yet, apply round updates and broadcast
+            if not isElement(teams[1]) then
+                if #changes > 0 then
+                    outputChatBox("[RL] Admin Updated Stats: " .. table.concat(changes, " | "), root, 255, 150, 0)
+                else
+                    outputChatBox("[RL] Admin updated stats (No changes detected).", client, 255, 150, 0)
+                end
+                return 
+            end
+
+            -- Match is active, process team points
+            local t1s_old = tonumber(getElementData(teams[1], "Score")) or 0
+            local t2s_old = (isElement(teams[2]) and tonumber(getElementData(teams[2], "Score"))) or 0
+
+            setElementData(teams[1], "Score", t1s_new)
+            if isElement(teams[2]) then setElementData(teams[2], "Score", t2s_new) end
+            
+            if t1s_old ~= t1s_new then table.insert(changes, "T1: "..t1s_old.." -> "..t1s_new) end
+            if isElement(teams[2]) and t2s_old ~= t2s_new then table.insert(changes, "T2: "..t2s_old.." -> "..t2s_new) end
             
             if not isLeagueMode then
                 for i, p in ipairs(getElementsByType("player")) do
@@ -131,6 +140,19 @@ function isAdmin(player)
     return false
 end
 
+-- Helper to find player ignoring HEX codes
+function getPlayerFromPartialName(name)
+    local name = name and name:gsub("#%x%x%x%x%x%x", ""):lower() or ""
+    if name == "" then return false end
+    for i, player in ipairs(getElementsByType("player")) do
+        local playerName = getPlayerName(player):gsub("#%x%x%x%x%x%x", ""):lower()
+        if playerName:find(name, 1, true) then
+            return player
+        end
+    end
+    return false
+end
+
 addEvent("checkAdminAccess", true)
 addEventHandler("checkAdminAccess", root, function()
     triggerClientEvent(client, "openAdminPanel", client, isAdmin(client))
@@ -142,7 +164,7 @@ end)
 addEvent("onClientJoinGame", true)
 addEventHandler("onClientJoinGame", root, function()
     if isAdmin(client) then
-        outputChatBox("[RL] Welcome Admin! Press F2 for Clanwar Panel. F9 for commands.", client, 0, 255, 0)
+        outputChatBox("[RL] Welcome Admin! Press F2 for Clanwar Panel.", client, 0, 255, 0)
     end
     if isElement(teams[1]) then syncClients() end
 end)
@@ -471,6 +493,13 @@ end
 -----------------
 -- COMMANDS & UTILS
 -----------------
+addEventHandler("onPlayerCommand", root, function(command)
+    if command == "redo" and techLocked and isAdmin(source) then
+        outputChatBox("[RL] /redo is locked for this round! (More than 10s passed since GO)", source, 255, 0, 0)
+        cancelEvent()
+    end
+end)
+
 addCommandHandler("rd", function(p)
     if isLeagueMode then
         outputChatBox("[RL] Use of /rd is disabled in Player League mode.", p, 255, 0, 0)
@@ -503,8 +532,6 @@ addCommandHandler("rd", function(p)
         isTechPause = false 
         outputChatBox("[RL] BOTH TEAMS READY - STARTING MATCH!", root, 0, 255, 0)
         
-        -- FIX: Always load next map (from queue or random if queue empty)
-        -- This fixes the issue where intermission warmups were restarting instead of advancing.
         loadNextMap()
     end
 end)
@@ -519,7 +546,6 @@ function forceStartMatchLogic(adminPlayer)
         isTechPause = false
         outputChatBox("[RL] Admin forced start - STARTING MATCH!", root, 0, 255, 0)
         
-        -- FIX: Consistent behavior with /rd fix
         loadNextMap()
     end
 end
@@ -534,7 +560,7 @@ addCommandHandler("playerpts", function(player, cmd, targetName, amount)
         return
     end
     
-    local target = getPlayerFromName(targetName)
+    local target = getPlayerFromPartialName(targetName)
     if target then
         local pts = tonumber(amount) or 0
         setElementData(target, "Score", pts)
@@ -543,9 +569,36 @@ addCommandHandler("playerpts", function(player, cmd, targetName, amount)
             setElementData(target, "Pts/Round", string.format("%.2f", pts / math.max(1, c_round)))
         end
         
-        outputChatBox("[RL] Set "..targetName.."'s Score to "..pts, player, 0, 255, 0)
+        outputChatBox("[RL] Set "..getPlayerName(target):gsub("#%x%x%x%x%x%x", "").."'s Score to "..pts, player, 0, 255, 0)
     else
-        outputChatBox("[RL] Player '"..targetName.."' not found. Match EXACT name.", player, 255, 0, 0)
+        outputChatBox("[RL] Player '"..targetName.."' not found.", player, 255, 0, 0)
+    end
+end)
+
+addCommandHandler("mvp", function(player, cmd, targetName, teamName)
+    if not isAdmin(player) then return end
+    if not targetName or not teamName then
+        outputChatBox("Syntax: /mvp [nick] [t1/t2/spec]", player, 255, 255, 0)
+        return
+    end
+    
+    local target = getPlayerFromPartialName(targetName)
+    if target then
+        local teamToJoin = nil
+        local tName = teamName:lower()
+        if tName == "t1" and isElement(teams[1]) then teamToJoin = teams[1]
+        elseif tName == "t2" and isElement(teams[2]) then teamToJoin = teams[2]
+        elseif tName == "spec" and isElement(teams[3]) then teamToJoin = teams[3]
+        end
+
+        if teamToJoin then
+            setPlayerTeam(target, teamToJoin)
+            outputChatBox("[RL] Moved " .. getPlayerName(target):gsub("#%x%x%x%x%x%x", "") .. " to " .. getTeamName(teamToJoin), root, 0, 255, 0)
+        else
+            outputChatBox("[RL] Invalid or inactive team. Use t1, t2, or spec.", player, 255, 0, 0)
+        end
+    else
+        outputChatBox("[RL] Player '"..targetName.."' not found.", player, 255, 0, 0)
     end
 end)
 
@@ -561,7 +614,7 @@ addEventHandler("onRaceStateChanging", root, function(newState, oldState)
         if isElement(teams[1]) and not isLeagueMode and not warmupState then
             techLockTimer = setTimer(function() 
                 techLocked = true 
-                outputChatBox("[RL] Tech Pause is now LOCKED for this round.", root, 150, 150, 150)
+                outputChatBox("[RL] Tech Pause & Redo are now LOCKED for this round.", root, 150, 150, 150)
             end, 10000, 1)
         end
         
@@ -690,11 +743,14 @@ function setCaptains(c1, c2)
         outputChatBox("[RL] Cannot set captains in Player League mode.", root, 255, 0, 0)
         return
     end
-    captain1=c1; captain2=c2; 
+    captain1 = c1; captain2 = c2; 
     local clean_c1 = c1:gsub("#%x%x%x%x%x%x", "")
     local clean_c2 = c2:gsub("#%x%x%x%x%x%x", "")
-    if c1 ~= "" and c2 ~= "" then
-        outputChatBox("[RL] Captains updated: " .. clean_c1 .. " vs " .. clean_c2, root, 0, 255, 0) 
+    
+    if c1 ~= "" or c2 ~= "" then
+        local t1n = c1 ~= "" and clean_c1 or "None"
+        local t2n = c2 ~= "" and clean_c2 or "None"
+        outputChatBox("[RL] Captains updated: T1: " .. t1n .. " | T2: " .. t2n, root, 0, 255, 0) 
     else
         outputChatBox("[RL] Captains have been cleared.", root, 255, 150, 0) 
     end
