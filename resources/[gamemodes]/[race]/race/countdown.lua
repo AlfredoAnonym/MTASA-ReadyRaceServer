@@ -211,6 +211,7 @@ addCommandHandler("mcd", function(player)
 		self:update()
 		
 		waitingCountdown = nil
+		bManualMode = false -- NEW ADDITION: Resets the toggle so the next map proceeds normally.
 	else
 		-- No countdown is active, so just toggle the mode for the next round
 		bManualMode = not bManualMode
