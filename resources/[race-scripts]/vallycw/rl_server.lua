@@ -22,7 +22,7 @@ local reminderTimer = nil
 local currentMapWinner = nil
 
 -- Point Tracking
-local roundScores = {} -- Tracks points for the CURRENT round only
+local roundScores = {} 
 local roundEndedProcessDone = false
 local leagueRoundStartScores = {}
 
@@ -37,9 +37,7 @@ local readyStatus = {t1 = false, t2 = false}
 -----------------
 addEvent("onPollStarting")
 addEventHandler("onPollStarting", root, function()
-    if isElement(teams[1]) then
-        cancelEvent()
-    end
+    if isElement(teams[1]) then cancelEvent() end
 end)
 
 -----------------
@@ -83,17 +81,12 @@ addEventHandler("onClientCallsServerFunction", resourceRoot, function(funcname, 
             if cr_old ~= cr_new then table.insert(changes, "Round: "..cr_old.." -> "..c_round) end
             if mr_old ~= mr_new then table.insert(changes, "MaxRounds: "..mr_old.." -> "..rounds) end
             
-            -- If match has NOT started yet, apply round updates and broadcast
             if not isElement(teams[1]) then
-                if #changes > 0 then
-                    outputChatBox("[RL] Admin Updated Stats: " .. table.concat(changes, " | "), root, 255, 150, 0)
-                else
-                    outputChatBox("[RL] Admin updated stats (No changes detected).", client, 255, 150, 0)
-                end
+                if #changes > 0 then outputChatBox("[RL] Admin Updated Stats: " .. table.concat(changes, " | "), root, 255, 150, 0)
+                else outputChatBox("[RL] Admin updated stats (No changes detected).", client, 255, 150, 0) end
                 return 
             end
 
-            -- Match is active, process team points
             local t1s_old = tonumber(getElementData(teams[1], "Score")) or 0
             local t2s_old = (isElement(teams[2]) and tonumber(getElementData(teams[2], "Score"))) or 0
 
@@ -110,12 +103,8 @@ addEventHandler("onClientCallsServerFunction", resourceRoot, function(funcname, 
                 end
             end
             
-            if #changes > 0 then
-                outputChatBox("[RL] Admin Updated Stats: " .. table.concat(changes, " | "), root, 255, 150, 0)
-            else
-                outputChatBox("[RL] Admin updated stats (No changes detected).", client, 255, 150, 0)
-            end
-            
+            if #changes > 0 then outputChatBox("[RL] Admin Updated Stats: " .. table.concat(changes, " | "), root, 255, 150, 0)
+            else outputChatBox("[RL] Admin updated stats (No changes detected).", client, 255, 150, 0) end
             syncClients()
         end
     elseif funcname == "forceStartMatch" then
@@ -129,26 +118,20 @@ end)
 function isAdmin(player)
     if not isElement(player) then return false end
     if referee and getPlayerName(player) == referee then return true end
-    
     local acc = getPlayerAccount(player)
     if not isGuestAccount(acc) then
         local accName = getAccountName(acc)
-        if isObjectInACLGroup("user."..accName, aclGetGroup("Admin")) then
-            return true
-        end
+        if isObjectInACLGroup("user."..accName, aclGetGroup("Admin")) then return true end
     end
     return false
 end
 
--- Helper to find player ignoring HEX codes
 function getPlayerFromPartialName(name)
     local name = name and name:gsub("#%x%x%x%x%x%x", ""):lower() or ""
     if name == "" then return false end
     for i, player in ipairs(getElementsByType("player")) do
         local playerName = getPlayerName(player):gsub("#%x%x%x%x%x%x", ""):lower()
-        if playerName:find(name, 1, true) then
-            return player
-        end
+        if playerName:find(name, 1, true) then return player end
     end
     return false
 end
@@ -156,16 +139,12 @@ end
 addEvent("checkAdminAccess", true)
 addEventHandler("checkAdminAccess", root, function()
     triggerClientEvent(client, "openAdminPanel", client, isAdmin(client))
-    if isAdmin(client) then
-        triggerClientEvent(client, "syncMapQueue", resourceRoot, mapQueue)
-    end
+    if isAdmin(client) then triggerClientEvent(client, "syncMapQueue", resourceRoot, mapQueue) end
 end)
 
 addEvent("onClientJoinGame", true)
 addEventHandler("onClientJoinGame", root, function()
-    if isAdmin(client) then
-        outputChatBox("[RL] Welcome Admin! Press F2 for Clanwar Panel.", client, 0, 255, 0)
-    end
+    if isAdmin(client) then outputChatBox("[RL] Welcome Admin! Press F2 for Clanwar Panel.", client, 0, 255, 0) end
     if isElement(teams[1]) then syncClients() end
 end)
 
@@ -176,8 +155,7 @@ addEventHandler("requestStartWar", root, function(t1n, t2n, r1, g1, b1, r2, g2, 
     
     if league then
         t1n = "Player League"
-        captain1 = nil
-        captain2 = nil
+        captain1 = nil; captain2 = nil
         outputChatBox("[RL] Captains auto-cleared for League Mode.", client, 255, 150, 0)
     else
         if not captain1 or captain1 == "" or not captain2 or captain2 == "" then
@@ -216,10 +194,7 @@ addEventHandler("requestStartWar", root, function(t1n, t2n, r1, g1, b1, r2, g2, 
     exports.scoreboard:scoreboardAddColumn("Score")
     exports.scoreboard:scoreboardAddColumn("Maps Won")
     exports.scoreboard:scoreboardAddColumn("Maps Played") 
-    
-    if not isLeagueMode then
-        exports.scoreboard:scoreboardAddColumn("Pts/Round")
-    end
+    if not isLeagueMode then exports.scoreboard:scoreboardAddColumn("Pts/Round") end
     
     syncClients()
     
@@ -233,7 +208,6 @@ addEventHandler("requestStartWar", root, function(t1n, t2n, r1, g1, b1, r2, g2, 
     end
     
     setElementData(teams[1], "Score", 0)
-    
     outputChatBox("[RL] Match Initialized! Mode: "..(league and "Player League" or "Classic"), root, 0, 255, 0)
     outputChatBox("Press F1 to hide / show clanwar scoreboard.", root, 255, 255, 255)
     
@@ -253,23 +227,18 @@ addEventHandler("requestStartWar", root, function(t1n, t2n, r1, g1, b1, r2, g2, 
         startReminderLoop() 
         if isForce then
             outputChatBox("[RL] Clanwar Force Started! Warmup skipped.", root, 0, 255, 0)
-            readyStatus.t1 = true
-            readyStatus.t2 = true
+            readyStatus.t1 = true; readyStatus.t2 = true
             loadNextMap()
         else
             loadRandomMap()
         end
     end
-
     startCarColorEnforcement()
 end)
 
 addEvent("onPlayerRequestTeam", true)
 addEventHandler("onPlayerRequestTeam", root, function(team)
-    if not isElement(team) and isElement(teams[3]) then
-        team = teams[3]
-    end
-
+    if not isElement(team) and isElement(teams[3]) then team = teams[3] end
     if isElement(team) then
         setPlayerTeam(client, team)
         outputChatBox(getPlayerName(client).." joined "..getTeamName(team), root, 200, 200, 200)
@@ -283,6 +252,16 @@ function destroyTeams(player)
     if isTimer(techLockTimer) then killTimer(techLockTimer) end 
     stopReminderLoop() 
     
+    -- Terminate CC Panel background logic
+    if turnTimer and isTimer(turnTimer) then killTimer(turnTimer) end
+    isProcessActive = false
+    isWaitingForReady = false
+    actionQueue = {}
+    currentTurn = 1
+    
+    -- Passing 'true' effectively Force Closes the H menu fully
+    triggerClientEvent(root, "onCCProcessEnd", resourceRoot, true)
+
     isLeagueMode = false
     
     for i,p in ipairs(getElementsByType("player")) do
@@ -305,9 +284,7 @@ end
 function syncClients()
     local f_disp = warmupState or (c_round == 0)
     local remain = 0
-    if isLeagueMode and isTimer(leagueTimer) then
-        remain = getTimerDetails(leagueTimer)
-    end
+    if isLeagueMode and isTimer(leagueTimer) then remain = getTimerDetails(leagueTimer) end
     for i,p in ipairs(getElementsByType("player")) do
         triggerClientEvent(p, "updateClientData", p, teams[1], teams[2] or false, teams[3], c_round, rounds, f_disp, isLeagueMode, remain, isTechPause)
     end
@@ -321,17 +298,14 @@ local leaguePoints = {15, 13, 11, 9, 7, 5, 4, 3, 2, 1}
 addEvent("onPlayerReachCheckpoint", true)
 addEventHandler("onPlayerReachCheckpoint", root, function(cp, time)
     if not isLeagueMode or isWarmupMap or getPlayerTeam(source) == teams[3] then return end
-    
     if not checkpointRanks[cp] then checkpointRanks[cp] = 0 end
     checkpointRanks[cp] = checkpointRanks[cp] + 1
     
     local rank = checkpointRanks[cp]
     local pts = leaguePoints[rank] or 0
-    
     if pts > 0 then
         local cur = tonumber(getElementData(source, "Score")) or 0
-        local newScore = cur + pts
-        setElementData(source, "Score", newScore)
+        setElementData(source, "Score", cur + pts)
         roundScores[source] = (roundScores[source] or 0) + pts
     end
 end)
@@ -344,7 +318,6 @@ addEventHandler("onPlayerFinish", root, function(rank, time)
     setElementData(source, "Maps Played", mapsPlayed + 1)
     
     local rankNum = tonumber(rank) or 0
-    
     if rankNum == 1 then
         local mapsWon = tonumber(getElementData(source, "Maps Won")) or 0
         setElementData(source, "Maps Won", mapsWon + 1)
@@ -365,16 +338,11 @@ addEventHandler("onPlayerFinish", root, function(rank, time)
             setElementData(tm, "Score", curT + pts)
             outputChatBox("[RL] "..getPlayerName(source).." finished #"..rankNum.." for "..getTeamName(tm).." (+"..pts..")", root, 255, 255, 0)
         end
-        
         setElementData(source, "Pts/Round", string.format("%.2f", newScore / math.max(1, c_round)))
     else
-        -- League Mode Finish Logic (Scoreboard + Points)
         local cur = tonumber(getElementData(source, "Score")) or 0
-        local newScore = cur + pts
-        setElementData(source, "Score", newScore)
-        
+        setElementData(source, "Score", cur + pts)
         roundScores[source] = (roundScores[source] or 0) + pts
-        
         outputChatBox("[RL] "..getPlayerName(source).." finished #"..rank.." (+"..pts..")", root, 255, 255, 0)
     end
 end)
@@ -389,7 +357,6 @@ addEventHandler('onMapStarting', root, function()
     if isTimer(techLockTimer) then killTimer(techLockTimer) end 
     
     isWarmupMap = warmupState
-    
     if not isWarmupMap then
         if isManualMapLoad then
             c_round = c_round + 1
@@ -409,7 +376,6 @@ addEventHandler('onMapStarting', root, function()
             end
         end
     end
-    
     isManualMapLoad = false 
     syncClients()
 end)
@@ -418,22 +384,18 @@ end)
 -- MAP / QUEUE
 -----------------
 function sendMapList(client)
-    local maps = {}
+    local mapsList = {}
     for i, res in ipairs(getResources()) do
         if getResourceInfo(res, "type") == "map" and getResourceInfo(res, "gamemodes") == "race" then
-            local name = getResourceInfo(res, "name") or getResourceName(res)
-            table.insert(maps, name)
+            table.insert(mapsList, getResourceInfo(res, "name") or getResourceName(res))
         end
     end
-    triggerClientEvent(client, "receiveMapList", resourceRoot, maps)
+    triggerClientEvent(client, "receiveMapList", resourceRoot, mapsList)
 end
 
 function getMapResource(mapName)
     local res = getResourceFromName(mapName)
-    if res and (getResourceInfo(res, "name") or getResourceName(res)) == mapName then 
-        return res 
-    end
-    
+    if res and (getResourceInfo(res, "name") or getResourceName(res)) == mapName then return res end
     for i, r in ipairs(getResources()) do
         local n = getResourceInfo(r, "name") or getResourceName(r)
         if n == mapName then return r end
@@ -445,7 +407,6 @@ function loadNextMap()
     if #mapQueue > 0 then
         local mapName = table.remove(mapQueue, 1)
         local resToLoad = getMapResource(mapName)
-        
         if resToLoad then
             isManualMapLoad = true 
             exports.mapmanager:changeGamemodeMap(resToLoad)
@@ -460,34 +421,20 @@ end
 
 function loadRandomMap()
     if not warmupState then isManualMapLoad = true end
-    
-    local maps = {}
+    local mapList = {}
     for i, res in ipairs(getResources()) do
         if getResourceInfo(res, "type") == "map" and getResourceInfo(res, "gamemodes") == "race" then
             local friendlyName = getResourceInfo(res, "name")
             local resName = getResourceName(res)
             local mapNameToCheck = friendlyName or resName
-            
-            -- RIGOROUS QUEUE CHECK
-            -- Ensures that maps currently in the queue are NOT selected as random warmup maps
             local inQueue = false
             for _, qMap in ipairs(mapQueue) do
-                if qMap == friendlyName or qMap == resName or qMap == mapNameToCheck then 
-                    inQueue = true 
-                    break 
-                end
+                if qMap == friendlyName or qMap == resName or qMap == mapNameToCheck then inQueue = true; break end
             end
-            
-            if not inQueue then
-                table.insert(maps, res)
-            end
+            if not inQueue then table.insert(mapList, res) end
         end
     end
-    
-    if #maps > 0 then
-        local rnd = maps[math.random(#maps)]
-        exports.mapmanager:changeGamemodeMap(rnd)
-    end
+    if #mapList > 0 then exports.mapmanager:changeGamemodeMap(mapList[math.random(#mapList)]) end
 end
 
 -----------------
@@ -501,12 +448,8 @@ addEventHandler("onPlayerCommand", root, function(command)
 end)
 
 addCommandHandler("rd", function(p)
-    if isLeagueMode then
-        outputChatBox("[RL] Use of /rd is disabled in Player League mode.", p, 255, 0, 0)
-        return
-    end
+    if isLeagueMode then return end
     if not warmupState then return end
-
     if #mapQueue == 0 and c_round == 0 and not isTechPause then
         outputChatBox("[RL] Cannot start match: Map Queue is empty!", p, 255, 0, 0)
         return
@@ -516,22 +459,15 @@ addCommandHandler("rd", function(p)
     local isCap = false
     
     if name == captain1 then 
-        readyStatus.t1 = true 
-        outputChatBox("[RL] Captain 1 ("..name..") is READY!", root, 0, 255, 0)
-        isCap = true
+        readyStatus.t1 = true; outputChatBox("[RL] Captain 1 ("..name..") is READY!", root, 0, 255, 0); isCap = true
     end
     if name == captain2 then 
-        readyStatus.t2 = true 
-        outputChatBox("[RL] Captain 2 ("..name..") is READY!", root, 0, 255, 0)
-        isCap = true
+        readyStatus.t2 = true; outputChatBox("[RL] Captain 2 ("..name..") is READY!", root, 0, 255, 0); isCap = true
     end
     
     if isCap and readyStatus.t1 and readyStatus.t2 then
-        local wasTechPause = isTechPause
-        warmupState = false
-        isTechPause = false 
+        warmupState = false; isTechPause = false 
         outputChatBox("[RL] BOTH TEAMS READY - STARTING MATCH!", root, 0, 255, 0)
-        
         loadNextMap()
     end
 end)
@@ -540,160 +476,90 @@ function forceStartMatchLogic(adminPlayer)
     if isAdmin(adminPlayer) then
         if isTimer(leagueTimer) then killTimer(leagueTimer) end
         readyStatus.t1 = true; readyStatus.t2 = true
-        
-        local wasTechPause = isTechPause
-        warmupState = false
-        isTechPause = false
+        warmupState = false; isTechPause = false
         outputChatBox("[RL] Admin forced start - STARTING MATCH!", root, 0, 255, 0)
-        
         loadNextMap()
     end
 end
-
 addCommandHandler("forcerd", function(p) forceStartMatchLogic(p) end)
 addCommandHandler("forcestart", function(p) forceStartMatchLogic(p) end)
 
 addCommandHandler("playerpts", function(player, cmd, targetName, amount)
     if not isAdmin(player) then return end
-    if not targetName or not amount then
-        outputChatBox("Syntax: /playerpts [nick] [amount]", player, 255, 255, 0)
-        return
-    end
-    
     local target = getPlayerFromPartialName(targetName)
     if target then
         local pts = tonumber(amount) or 0
         setElementData(target, "Score", pts)
-        
-        if not isLeagueMode then
-            setElementData(target, "Pts/Round", string.format("%.2f", pts / math.max(1, c_round)))
-        end
-        
+        if not isLeagueMode then setElementData(target, "Pts/Round", string.format("%.2f", pts / math.max(1, c_round))) end
         outputChatBox("[RL] Set "..getPlayerName(target):gsub("#%x%x%x%x%x%x", "").."'s Score to "..pts, player, 0, 255, 0)
-    else
-        outputChatBox("[RL] Player '"..targetName.."' not found.", player, 255, 0, 0)
     end
 end)
 
 addCommandHandler("mvp", function(player, cmd, targetName, teamName)
     if not isAdmin(player) then return end
-    if not targetName or not teamName then
-        outputChatBox("Syntax: /mvp [nick] [t1/t2/spec]", player, 255, 255, 0)
-        return
-    end
-    
     local target = getPlayerFromPartialName(targetName)
     if target then
         local teamToJoin = nil
         local tName = teamName:lower()
         if tName == "t1" and isElement(teams[1]) then teamToJoin = teams[1]
         elseif tName == "t2" and isElement(teams[2]) then teamToJoin = teams[2]
-        elseif tName == "spec" and isElement(teams[3]) then teamToJoin = teams[3]
-        end
-
+        elseif tName == "spec" and isElement(teams[3]) then teamToJoin = teams[3] end
         if teamToJoin then
             setPlayerTeam(target, teamToJoin)
             outputChatBox("[RL] Moved " .. getPlayerName(target):gsub("#%x%x%x%x%x%x", "") .. " to " .. getTeamName(teamToJoin), root, 0, 255, 0)
-        else
-            outputChatBox("[RL] Invalid or inactive team. Use t1, t2, or spec.", player, 255, 0, 0)
         end
-    else
-        outputChatBox("[RL] Player '"..targetName.."' not found.", player, 255, 0, 0)
     end
 end)
 
 addEventHandler("onRaceStateChanging", root, function(newState, oldState)
     if newState == "GridCountdown" then
-        techLocked = false
-        if isTimer(techLockTimer) then killTimer(techLockTimer) end
-        
+        techLocked = false; if isTimer(techLockTimer) then killTimer(techLockTimer) end
     elseif newState == "Running" then
-        techLocked = false 
-        if isTimer(techLockTimer) then killTimer(techLockTimer) end
-        
+        techLocked = false; if isTimer(techLockTimer) then killTimer(techLockTimer) end
         if isElement(teams[1]) and not isLeagueMode and not warmupState then
-            techLockTimer = setTimer(function() 
-                techLocked = true 
-                outputChatBox("[RL] Tech Pause & Redo are now LOCKED for this round.", root, 150, 150, 150)
-            end, 10000, 1)
+            techLockTimer = setTimer(function() techLocked = true; outputChatBox("[RL] Tech Pause & Redo are now LOCKED for this round.", root, 150, 150, 150) end, 10000, 1)
         end
-        
         for i,p in ipairs(getElementsByType("player")) do
-            if getPlayerTeam(p) == teams[3] then
-                triggerClientEvent(p, "onSpectateRequest", p)
-            end
+            if getPlayerTeam(p) == teams[3] then triggerClientEvent(p, "onSpectateRequest", p) end
         end
-        
     elseif newState == "PostFinish" then
         if isElement(teams[1]) and not warmupState then
             if not roundEndedProcessDone then
                 roundEndedProcessDone = true
-                
                 if c_round <= rounds then
-                    -- 1. Calculate Round MVP
-                    local r_best_player = nil
-                    local r_best_score = -1
+                    local r_best_player = nil; local r_best_score = -1
                     for p, score in pairs(roundScores) do
-                        if isElement(p) and score > r_best_score then
-                            r_best_score = score
-                            r_best_player = p
-                        end
+                        if isElement(p) and score > r_best_score then r_best_score = score; r_best_player = p end
                     end
-                    
-                    local r_mvp_name = "None"
-                    if r_best_player then r_mvp_name = getPlayerName(r_best_player) end
+                    local r_mvp_name = r_best_player and getPlayerName(r_best_player) or "None"
                     if r_best_score == -1 then r_best_score = 0 end
-
                     outputChatBox("[RL] Round "..c_round.." MVP: "..r_mvp_name.." ("..r_best_score.." pts)", root, 0, 255, 0)
 
                     if isLeagueMode then
                         local players = getElementsByType("player")
-                        table.sort(players, function(a,b) 
-                            return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) 
-                        end)
-                        if players[1] then
-                            local t_score = getElementData(players[1], "Score") or 0
-                            outputChatBox("[RL] Overall Leader: "..getPlayerName(players[1]).." ("..t_score.." pts total)", root, 255, 200, 0)
-                        end
+                        table.sort(players, function(a,b) return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) end)
+                        if players[1] then outputChatBox("[RL] Overall Leader: "..getPlayerName(players[1]).." ("..(getElementData(players[1], "Score") or 0).." pts total)", root, 255, 200, 0) end
                     else
-                        local t1n = getTeamName(teams[1])
-                        local t2n = isElement(teams[2]) and getTeamName(teams[2]) or "T2"
                         local s1 = tonumber(getElementData(teams[1], "Score")) or 0
                         local s2 = isElement(teams[2]) and tonumber(getElementData(teams[2], "Score")) or 0
-                        outputChatBox("[RL] Scores: "..t1n.." ("..s1..") - "..t2n.." ("..s2..")", root, 0, 255, 0)
+                        outputChatBox("[RL] Scores: "..getTeamName(teams[1]).." ("..s1..") - "..(isElement(teams[2]) and getTeamName(teams[2]) or "T2").." ("..s2..")", root, 0, 255, 0)
                     end
                 end
                 
                 if c_round < rounds then
-                    -- NEXT MAP / WARMUP LOGIC
                     setTimer(function()
                         if not isElement(teams[1]) then return end
-                        
-                        if isLeagueMode then
-                            outputChatBox("[RL] Loading next map...", root, 0, 255, 0)
-                            loadNextMap() 
+                        if isLeagueMode then loadNextMap() 
                         else
-                            -- CLANWAR MODE: Transition to Random Warmup (NOT from queue)
-                            warmupState = true
-                            readyStatus = {t1 = false, t2 = false}
-                            loadRandomMap() -- FIXED: Now explicitly loads random map, ignoring queue
-                            syncClients()
+                            warmupState = true; readyStatus = {t1 = false, t2 = false}
+                            loadRandomMap(); syncClients()
                         end
                     end, 5000, 1)
-
                 elseif c_round >= rounds then
-                    -- FINAL ROUND ENDED
                     outputChatBox("[RL] FINAL ROUND ENDED!", root, 255, 0, 255)
-                    
                     local players = getElementsByType("player")
-                    table.sort(players, function(a,b) 
-                        return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) 
-                    end)
-                    if players[1] then
-                         local score = getElementData(players[1], "Score") or 0
-                         outputChatBox("[RL] MATCH MVP: "..getPlayerName(players[1]).." ("..score.." pts)", root, 255, 255, 0)
-                    end
-                    
+                    table.sort(players, function(a,b) return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) end)
+                    if players[1] then outputChatBox("[RL] MATCH MVP: "..getPlayerName(players[1]).." ("..(getElementData(players[1], "Score") or 0).." pts)", root, 255, 255, 0) end
                     setTimer(finishWar, 5000, 1)
                 end
             end
@@ -702,58 +568,29 @@ addEventHandler("onRaceStateChanging", root, function(newState, oldState)
 end)
 
 addCommandHandler("tech", function(p)
-    if not isElement(teams[1]) then return end
-    if isLeagueMode then return end
-    if warmupState then return end
+    if not isElement(teams[1]) or isLeagueMode or warmupState then return end
+    if techLocked then outputChatBox("[RL] Tech pause is locked!", p, 255, 0, 0); return end
     
-    if techLocked then 
-        outputChatBox("[RL] Tech pause is locked! (More than 10 seconds have passed since GO!)", p, 255, 0, 0) 
-        return 
-    end
-    
-    if (captain1 and getPlayerName(p) == captain1) or 
-       (captain2 and getPlayerName(p) == captain2) or 
-       isAdmin(p) then
-        
+    if (captain1 and getPlayerName(p) == captain1) or (captain2 and getPlayerName(p) == captain2) or isAdmin(p) then
         if isTimer(leagueTimer) then killTimer(leagueTimer) end
         if isTimer(techLockTimer) then killTimer(techLockTimer) end
-        
         local currentMap = exports.mapmanager:getRunningGamemodeMap()
-        if currentMap then
-            local mapName = getResourceInfo(currentMap, "name") or getResourceName(currentMap)
-            table.insert(mapQueue, 1, mapName)
-        end
-
+        if currentMap then table.insert(mapQueue, 1, getResourceInfo(currentMap, "name") or getResourceName(currentMap)) end
         outputChatBox("=== TECH PAUSE CALLED ===", root, 255, 0, 0)
-        
-        warmupState = true
-        isTechPause = true
-        isManualMapLoad = false 
-        readyStatus = {t1=false, t2=false}
-        c_round = math.max(0, c_round - 1)
-        
-        loadRandomMap()
-        syncClients()
+        warmupState = true; isTechPause = true; isManualMapLoad = false 
+        readyStatus = {t1=false, t2=false}; c_round = math.max(0, c_round - 1)
+        loadRandomMap(); syncClients()
     end
 end)
 
 function setReferee(name) referee = name; outputChatBox("[RL] Referee: "..name, root, 0, 255, 0) end
 function setCaptains(c1, c2) 
-    if isLeagueMode then
-        outputChatBox("[RL] Cannot set captains in Player League mode.", root, 255, 0, 0)
-        return
-    end
+    if isLeagueMode then return end
     captain1 = c1; captain2 = c2; 
     local clean_c1 = c1:gsub("#%x%x%x%x%x%x", "")
     local clean_c2 = c2:gsub("#%x%x%x%x%x%x", "")
-    
-    if c1 ~= "" or c2 ~= "" then
-        local t1n = c1 ~= "" and clean_c1 or "None"
-        local t2n = c2 ~= "" and clean_c2 or "None"
-        outputChatBox("[RL] Captains updated: T1: " .. t1n .. " | T2: " .. t2n, root, 0, 255, 0) 
-    else
-        outputChatBox("[RL] Captains have been cleared.", root, 255, 150, 0) 
-    end
+    if c1 ~= "" or c2 ~= "" then outputChatBox("[RL] Captains updated: T1: " .. (c1 ~= "" and clean_c1 or "None") .. " | T2: " .. (c2 ~= "" and clean_c2 or "None"), root, 0, 255, 0) 
+    else outputChatBox("[RL] Captains cleared.", root, 255, 150, 0) end
 end
 
 function startCarColorEnforcement()
@@ -777,8 +614,11 @@ function startReminderLoop()
     if isTimer(reminderTimer) then killTimer(reminderTimer) end
     reminderTimer = setTimer(function()
         if not warmupState then return end
-        if isTechPause then
-            outputChatBox("[RL] Tech pause is running. To ready up and continue the match, type /rd", root, 255, 150, 0)
+        
+        -- Absolutely prevent spamming during the CC Pick/Ban Phase or if waiting for ready status
+        if isProcessActive or isWaitingForReady or (actionQueue and #actionQueue > 0) then return end 
+
+        if isTechPause then outputChatBox("[RL] Tech pause is running. To ready up and continue the match, type /rd", root, 255, 150, 0)
         else
             if captain1 and not readyStatus.t1 then
                 local p = getPlayerFromName(captain1)
@@ -792,73 +632,523 @@ function startReminderLoop()
     end, 60000, 0)
 end
 
-function stopReminderLoop()
-    if isTimer(reminderTimer) then killTimer(reminderTimer) end
-end
+function stopReminderLoop() if isTimer(reminderTimer) then killTimer(reminderTimer) end end
 
 function finishWar()
     if isWarEnded or not isElement(teams[1]) then return end
     isWarEnded = true
     
-    local file = nil
-    if fileExists("stats.txt") then
-        file = fileOpen("stats.txt")
-        fileSetPos(file, fileGetSize(file)) 
-    else
-        file = fileCreate("stats.txt")
-    end
-
+    local file = fileExists("stats.txt") and fileOpen("stats.txt") or fileCreate("stats.txt")
     if file then
+        fileSetPos(file, fileGetSize(file)) 
         local time = getRealTime()
         local dateStr = string.format("[%02d/%02d/%04d %02d:%02d]", time.monthday, time.month + 1, time.year + 1900, time.hour, time.minute)
         
-        fileWrite(file, "\r\n========================================\r\n")
-        fileWrite(file, "MATCH DATE: " .. dateStr .. "\r\n")
-        
-        if isLeagueMode then
-            fileWrite(file, "MODE: Player League\r\n")
+        fileWrite(file, "\r\n========================================\r\nMATCH DATE: " .. dateStr .. "\r\n")
+        if isLeagueMode then fileWrite(file, "MODE: Player League\r\n")
         else
-            local t1 = getTeamName(teams[1])
-            local t2 = isElement(teams[2]) and getTeamName(teams[2]) or "None"
-            local s1 = tonumber(getElementData(teams[1], "Score")) or 0
-            local s2 = tonumber(getElementData(teams[2], "Score")) or 0
-            fileWrite(file, "MODE: Clanwar (" .. t1 .. " vs " .. t2 .. ")\r\n")
-            fileWrite(file, "FINAL SCORE: " .. s1 .. " - " .. s2 .. "\r\n")
+            fileWrite(file, "MODE: Clanwar (" .. getTeamName(teams[1]) .. " vs " .. (isElement(teams[2]) and getTeamName(teams[2]) or "None") .. ")\r\n")
+            fileWrite(file, "FINAL SCORE: " .. (tonumber(getElementData(teams[1], "Score")) or 0) .. " - " .. (tonumber(getElementData(teams[2], "Score")) or 0) .. "\r\n")
         end
-        
-        fileWrite(file, "----------------------------------------\r\n")
-        fileWrite(file, "PLAYER RANKINGS:\r\n")
+        fileWrite(file, "----------------------------------------\r\nPLAYER RANKINGS:\r\n")
         
         local players = getElementsByType("player")
-        table.sort(players, function(a,b) 
-            return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) 
-        end)
+        table.sort(players, function(a,b) return (tonumber(getElementData(a, "Score") or 0) > tonumber(getElementData(b, "Score") or 0)) end)
         
         for i,p in ipairs(players) do
             local score = tonumber(getElementData(p, "Score")) or 0
             local won = tonumber(getElementData(p, "Maps Won")) or 0
             local played = tonumber(getElementData(p, "Maps Played")) or 0
+            local cleanName = getPlayerName(p):gsub("#%x%x%x%x%x%x", "")
             
-            if isLeagueMode then
-                if score > 0 or getPlayerTeam(p) == teams[1] then
-                    local cleanName = getPlayerName(p):gsub("#%x%x%x%x%x%x", "")
-                    fileWrite(file, string.format("%d. %s - Score: %d | Maps Won: %d | Maps Played: %d\r\n", i, cleanName, score, won, played))
-                end
-            else
-                local ptsPerRound = getElementData(p, "Pts/Round") or "N/A"
-                if score > 0 or getPlayerTeam(p) == teams[1] or getPlayerTeam(p) == teams[2] then
-                    local cleanName = getPlayerName(p):gsub("#%x%x%x%x%x%x", "")
-                    fileWrite(file, string.format("%d. %s - Score: %d | Maps Won: %d | Maps Played: %d | Pts/Round: %s\r\n", i, cleanName, score, won, played, tostring(ptsPerRound)))
-                end
+            if isLeagueMode and (score > 0 or getPlayerTeam(p) == teams[1]) then
+                fileWrite(file, string.format("%d. %s - Score: %d | Maps Won: %d | Maps Played: %d\r\n", i, cleanName, score, won, played))
+            elseif not isLeagueMode and (score > 0 or getPlayerTeam(p) == teams[1] or getPlayerTeam(p) == teams[2]) then
+                fileWrite(file, string.format("%d. %s - Score: %d | Maps Won: %d | Maps Played: %d | Pts/Round: %s\r\n", i, cleanName, score, won, played, tostring(getElementData(p, "Pts/Round") or "N/A")))
             end
         end
         fileWrite(file, "========================================\r\n")
         fileClose(file)
         outputChatBox("[RL] Stats exported to 'stats.txt'.", root, 0, 255, 0)
-    else
-        outputChatBox("[RL] Error writing to stats.txt", root, 255, 0, 0)
     end
-    
     outputChatBox("[RL] MATCH FINISHED!", root, 255, 0, 255)
     destroyTeams(nil)
+end
+
+
+---------------------------------------------------------
+-- CAPTAINS CUP MODE INTEGRATION
+---------------------------------------------------------
+local ccTeams = { Team1 = "", Team2 = "" }
+local captainElements = { Captain1 = nil, Captain2 = nil }
+local captainNames = { Captain1 = "", Captain2 = "" }
+local ccReadyStatus = { Team1 = false, Team2 = false }
+local ccMaps = {}
+local banList = { BanTeam1 = {}, BanTeam2 = {} }
+local pickList = { PickTeam1 = {}, PickTeam2 = {} }
+local actionQueue = {}
+local currentTurn = 1
+local isProcessActive = false
+local isWaitingForReady = false
+local turnTimer = nil
+local categoryStats = { Team1 = {}, Team2 = {} } 
+local cc_ban_limit = 2
+local cc_pick_limit = 2
+
+local function playPickSound() triggerClientEvent(root, "onPickSound", resourceRoot) end
+local function playBanSound() triggerClientEvent(root, "onBanSound", resourceRoot) end
+local function playTimeoutSound() triggerClientEvent(root, "onTurnTimeoutSound", resourceRoot) end
+
+function removeHex(text)
+    if type(text) == "string" then return string.gsub(text, "#%x%x%x%x%x%x", "") end
+    return text
+end
+
+function saveMapsToJSON()
+    local file = fileExists("maps.json") and fileOpen("maps.json") or fileCreate("maps.json")
+    if file then fileWrite(file, toJSON(ccMaps)); fileClose(file) end
+end
+
+function loadMapsFromJSON()
+    local file = fileExists("maps.json") and fileOpen("maps.json") or nil
+    if not file then
+        ccMaps = { City = {}, Classic = {}, Motorbike = {}, Circuit = {}, Offroad = {}, Airplane = {} }
+        return
+    end
+    local fileSize = fileGetSize(file)
+    local jsonString = fileRead(file, fileSize)
+    fileClose(file)
+    ccMaps = fromJSON(jsonString) or {}
+end
+addEventHandler("onResourceStart", resourceRoot, loadMapsFromJSON)
+
+function syncData(player)
+    triggerClientEvent(player or root, "onSyncData", resourceRoot, ccTeams, captainNames, ccMaps, banList, pickList, isProcessActive and actionQueue[currentTurn] or nil, ccReadyStatus, isWaitingForReady)
+end
+
+addEventHandler("onPlayerResourceStart", root, function(resource)
+    if resource == getThisResource() then syncData(source) end
+end)
+
+function getAllServerMaps()
+    local allMaps = {}
+    for _, res in ipairs(getResources()) do
+        if getResourceInfo(res, "type") == "map" then table.insert(allMaps, getResourceInfo(res, "name") or getResourceName(res)) end
+    end
+    return allMaps
+end
+
+addEvent("onRequestCCMaps", true)
+addEventHandler("onRequestCCMaps", root, function()
+    if not isAdmin(client) then return end
+    triggerClientEvent(client, "cc:openAdminGUI", resourceRoot, getAllServerMaps(), ccMaps)
+end)
+
+addEvent("cc:adminAction", true)
+addEventHandler("cc:adminAction", resourceRoot, function(action, arg1, arg2)
+    if not isAdmin(client) then return end
+    if action == "addMap" then
+        if not ccMaps[arg1] then ccMaps[arg1] = {} end
+        table.insert(ccMaps[arg1], arg2)
+    elseif action == "remMap" then
+        if ccMaps[arg1] then
+            for i, name in ipairs(ccMaps[arg1]) do
+                if name == arg2 then table.remove(ccMaps[arg1], i) break end
+            end
+        end
+    elseif action == "addCat" then
+        if not ccMaps[arg1] then ccMaps[arg1] = {} end
+    elseif action == "renCat" then
+        if ccMaps[arg1] and not ccMaps[arg2] then
+            ccMaps[arg2] = ccMaps[arg1]
+            ccMaps[arg1] = nil
+        end
+    elseif action == "delCat" then ccMaps[arg1] = nil end
+    
+    saveMapsToJSON()
+    syncData()
+    triggerClientEvent(client, "cc:refreshAdminGUI", resourceRoot, getAllServerMaps(), ccMaps)
+end)
+
+addEvent("onRequestStartCaptainsCup", true)
+addEventHandler("onRequestStartCaptainsCup", root, function(t1n, t2n, r1, g1, b1, r2, g2, b2, max_rounds, banLimit, pickLimit)
+    if not isAdmin(client) then return end
+    if isProcessActive then
+        outputChatBox("[CC] Captain Mode is already running!", client, 255, 0, 0)
+        return
+    end
+    if not captain1 or captain1 == "" or not captain2 or captain2 == "" then
+        outputChatBox("[CC] You must assign Captains in the 'General' tab first!", client, 255, 0, 0)
+        return
+    end
+    
+    local p1 = getPlayerFromPartialName(captain1)
+    local p2 = getPlayerFromPartialName(captain2)
+    
+    if not p1 or not p2 then
+        outputChatBox("[CC] One or both captains are not currently online!", client, 255, 0, 0)
+        return
+    end
+
+    captainElements.Captain1 = p1
+    captainElements.Captain2 = p2
+    captainNames.Captain1 = removeHex(getPlayerName(p1))
+    captainNames.Captain2 = removeHex(getPlayerName(p2))
+    
+    -- Load Custom Limits
+    cc_ban_limit = tonumber(banLimit) or 2
+    cc_pick_limit = tonumber(pickLimit) or 2
+
+    -- INITIALIZE MATCH FIRST (F3 panel + Setup)
+    if isElement(teams[1]) then destroyElement(teams[1]) end
+    if isElement(teams[2]) then destroyElement(teams[2]) end
+    if isElement(teams[3]) then destroyElement(teams[3]) end
+    if isTimer(leagueTimer) then killTimer(leagueTimer) end
+    if isTimer(carColorTimer) then killTimer(carColorTimer) end
+    if isTimer(techLockTimer) then killTimer(techLockTimer) end 
+
+    isLeagueMode = false
+    teams[1] = createTeam(t1n, r1, g1, b1)
+    teams[2] = createTeam(t2n, r2, g2, b2)
+    teams[3] = createTeam('Spectators', 200, 200, 200)
+    setElementData(teams[1], "Score", 0)
+    setElementData(teams[2], "Score", 0)
+
+    rounds = max_rounds
+    c_round = 0
+    isWarEnded = false
+    isTechPause = false
+    techLocked = false 
+    warmupState = true
+    isWarmupMap = true 
+    isManualMapLoad = false
+    readyStatus = {t1 = false, t2 = false}
+    
+    exports.scoreboard:scoreboardAddColumn("Score")
+    exports.scoreboard:scoreboardAddColumn("Maps Won")
+    exports.scoreboard:scoreboardAddColumn("Maps Played") 
+    exports.scoreboard:scoreboardAddColumn("Pts/Round")
+
+    syncClients()
+    
+    for i,p in ipairs(getElementsByType("player")) do
+        setPlayerTeam(p, teams[3])
+        setElementData(p, "Score", 0)
+        setElementData(p, "Maps Won", 0) 
+        setElementData(p, "Maps Played", 0) 
+        setElementData(p, "Pts/Round", 0)
+        triggerClientEvent(p, "createGUI", p, t1n, t2n, isLeagueMode)
+    end
+    
+    startReminderLoop() 
+    startCarColorEnforcement()
+    
+    -- Load Warmup Map
+    loadRandomMap()
+
+    -- NOW START CAPTAINS CUP LOGIC
+    ccTeams.Team1 = t1n
+    ccTeams.Team2 = t2n
+    
+    categoryStats = { Team1 = {}, Team2 = {} }
+
+    -- Added "team" specification so dual captains function properly
+    actionQueue = {
+        { action = "ban", team = "Team1", captain = captainElements.Captain1 }, { action = "ban", team = "Team2", captain = captainElements.Captain2 },
+        { action = "ban", team = "Team1", captain = captainElements.Captain1 }, { action = "ban", team = "Team2", captain = captainElements.Captain2 },
+        { action = "pick", team = "Team1", captain = captainElements.Captain1 }, { action = "pick", team = "Team2", captain = captainElements.Captain2 },
+        { action = "pick", team = "Team1", captain = captainElements.Captain1 }, { action = "pick", team = "Team2", captain = captainElements.Captain2 },
+        { action = "ban", team = "Team1", captain = captainElements.Captain1 }, { action = "ban", team = "Team2", captain = captainElements.Captain2 },
+        { action = "ban", team = "Team1", captain = captainElements.Captain1 }, { action = "ban", team = "Team2", captain = captainElements.Captain2 },
+        { action = "pick", team = "Team1", captain = captainElements.Captain1 }, { action = "pick", team = "Team2", captain = captainElements.Captain2 },
+        { action = "pick", team = "Team1", captain = captainElements.Captain1 }, { action = "pick", team = "Team2", captain = captainElements.Captain2 },
+        { action = "ban", team = "Team1", captain = captainElements.Captain1 }, { action = "ban", team = "Team2", captain = captainElements.Captain2 },
+        { action = "pick", team = "Team1", captain = captainElements.Captain1 }, { action = "pick", team = "Team2", captain = captainElements.Captain2 }
+    }
+
+    isProcessActive = true
+    isWaitingForReady = true
+    ccReadyStatus = { Team1 = false, Team2 = false }
+    currentTurn = 1
+    banList = { BanTeam1 = {}, BanTeam2 = {} }
+    pickList = { PickTeam1 = {}, PickTeam2 = {} }
+    
+    outputChatBox("#FFFF00[CC] #FFFFFFCaptain Mode initiated! Warmup has started. Captains, confirm readiness via the CC Panel!", root, 255, 255, 255, true)
+    
+    -- Show GUI to everyone
+    triggerClientEvent(root, "onCCProcessStart", resourceRoot)
+    syncData()
+end)
+
+addCommandHandler("ccrandom", function(player)
+    if not isAdmin(player) then return end
+    
+    local pool = {}
+    for cat, mList in pairs(ccMaps) do
+        for _, m in ipairs(mList) do table.insert(pool, m) end
+    end
+    
+    if #pool < 20 then
+        outputChatBox("[CC] Not enough maps in the CC Pool to simulate a full random draft!", player, 255, 0, 0)
+        return
+    end
+    
+    banList = { BanTeam1 = {}, BanTeam2 = {} }
+    pickList = { PickTeam1 = {}, PickTeam2 = {} }
+    categoryStats = { Team1 = {}, Team2 = {} }
+    
+    -- Simulate the standard ban/pick sequence
+    local simulateQueue = {
+        { action = "ban", team = "Team1" }, { action = "ban", team = "Team2" },
+        { action = "ban", team = "Team1" }, { action = "ban", team = "Team2" },
+        { action = "pick", team = "Team1" }, { action = "pick", team = "Team2" },
+        { action = "pick", team = "Team1" }, { action = "pick", team = "Team2" },
+        { action = "ban", team = "Team1" }, { action = "ban", team = "Team2" },
+        { action = "ban", team = "Team1" }, { action = "ban", team = "Team2" },
+        { action = "pick", team = "Team1" }, { action = "pick", team = "Team2" },
+        { action = "pick", team = "Team1" }, { action = "pick", team = "Team2" },
+        { action = "ban", team = "Team1" }, { action = "ban", team = "Team2" },
+        { action = "pick", team = "Team1" }, { action = "pick", team = "Team2" }
+    }
+    
+    for _, turn in ipairs(simulateQueue) do
+        local availableMaps = {}
+        local teamKey = turn.team
+        for cat, mList in pairs(ccMaps) do
+            local stats = categoryStats[teamKey][cat] or {bans = 0, picks = 0}
+            if (turn.action == "ban" and stats.bans < cc_ban_limit) or (turn.action == "pick" and stats.picks < cc_pick_limit) then
+                for _, m in ipairs(mList) do
+                    local isUsed = false
+                    for _, ban in ipairs(banList.BanTeam1) do if ban == m then isUsed = true break end end
+                    for _, ban in ipairs(banList.BanTeam2) do if ban == m then isUsed = true break end end
+                    for _, pick in ipairs(pickList.PickTeam1) do if pick == m then isUsed = true break end end
+                    for _, pick in ipairs(pickList.PickTeam2) do if pick == m then isUsed = true break end end
+                    if not isUsed then table.insert(availableMaps, {category = cat, name = m}) end
+                end
+            end
+        end
+        
+        if #availableMaps > 0 then
+            local rnd = math.random(#availableMaps)
+            local mapName = availableMaps[rnd].name
+            local cat = availableMaps[rnd].category
+            
+            if not categoryStats[teamKey][cat] then categoryStats[teamKey][cat] = {bans = 0, picks = 0} end
+            
+            if turn.action == "ban" then
+                categoryStats[teamKey][cat].bans = categoryStats[teamKey][cat].bans + 1
+                local tKey = (turn.team == "Team1") and "BanTeam1" or "BanTeam2"
+                table.insert(banList[tKey], mapName)
+            elseif turn.action == "pick" then
+                categoryStats[teamKey][cat].picks = categoryStats[teamKey][cat].picks + 1
+                local tKey = (turn.team == "Team1") and "PickTeam1" or "PickTeam2"
+                table.insert(pickList[tKey], mapName)
+            end
+        end
+    end
+    
+    mapQueue = {}
+    local maxPicks = math.max(#pickList.PickTeam1, #pickList.PickTeam2)
+    for i = 1, maxPicks do
+        if pickList.PickTeam1[i] then table.insert(mapQueue, pickList.PickTeam1[i]) end
+        if pickList.PickTeam2[i] then table.insert(mapQueue, pickList.PickTeam2[i]) end
+    end
+    
+    for i, p in ipairs(getElementsByType("player")) do
+        if isAdmin(p) then triggerClientEvent(p, "syncMapQueue", resourceRoot, mapQueue) end
+    end
+    
+    triggerClientEvent(root, "onCCProcessStart", resourceRoot)
+    
+    -- Immediately end it so they can just review via the H key
+    isProcessActive = false
+    triggerClientEvent(root, "onCCProcessEnd", resourceRoot, false)
+    syncData()
+    
+    outputChatBox("[CC] Random maps (bans and picks) selected from CC Pool! Captains type /rd to start!", root, 0, 255, 0)
+end)
+
+function handleReady(player)
+    if not isProcessActive or not isWaitingForReady then return end
+    
+    local isT1Match = (player == captainElements.Captain1)
+    local isT2Match = (player == captainElements.Captain2)
+    
+    if isT1Match and not ccReadyStatus.Team1 then
+        ccReadyStatus.Team1 = true
+        outputChatBox("#00FF00[READY] #FFFFFFCaptain of team " .. ccTeams.Team1 .. " is ready!", root, 255, 255, 255, true)
+    end
+    
+    if isT2Match and not ccReadyStatus.Team2 then
+        ccReadyStatus.Team2 = true
+        outputChatBox("#00FF00[READY] #FFFFFFCaptain of team " .. ccTeams.Team2 .. " is ready!", root, 255, 255, 255, true)
+    end
+    
+    if not isT1Match and not isT2Match then
+        outputChatBox("You are already ready or not a captain!", player, 255, 255, 0)
+        return
+    end
+
+    syncData()
+    checkAllReady()
+end
+addCommandHandler("ready", handleReady)
+addEvent("onClientRequestReady", true)
+addEventHandler("onClientRequestReady", root, function() handleReady(client) end)
+
+function checkAllReady()
+    if ccReadyStatus.Team1 and ccReadyStatus.Team2 then
+        isWaitingForReady = false
+        outputChatBox("#00FF00[START] #FFFFFFBoth teams are ready! Let the bans begin.", root, 255, 255, 255, true)
+        local nextCaptainName = (actionQueue[currentTurn].captain == captainElements.Captain1) and captainNames.Captain1 or captainNames.Captain2
+        outputChatBox("It's " .. nextCaptainName .. "'s turn (" .. actionQueue[currentTurn].action .. "). 60 seconds to choose!", root, 0, 255, 0)
+        startTurnTimer(); syncData()
+    end
+end
+
+function getRandomAvailableMap(actionType, teamKey)
+    local availableMaps = {}
+    for category, mapPool in pairs(ccMaps) do
+        local stats = categoryStats[teamKey] and categoryStats[teamKey][category] or {bans = 0, picks = 0}
+        
+        -- Respect the configured ban and pick limits
+        if (actionType == "ban" and stats.bans < cc_ban_limit) or (actionType == "pick" and stats.picks < cc_pick_limit) then
+            for _, mapName in ipairs(mapPool) do
+                local isUsed = false
+                for _, ban in ipairs(banList.BanTeam1) do if ban == mapName then isUsed = true break end end
+                for _, ban in ipairs(banList.BanTeam2) do if ban == mapName then isUsed = true break end end
+                for _, pick in ipairs(pickList.PickTeam1) do if pick == mapName then isUsed = true break end end
+                for _, pick in ipairs(pickList.PickTeam2) do if pick == mapName then isUsed = true break end end
+                if not isUsed then table.insert(availableMaps, {category = category, name = mapName}) end
+            end
+        end
+    end
+    if #availableMaps > 0 then
+        local randomIndex = math.random(1, #availableMaps)
+        return availableMaps[randomIndex].name, availableMaps[randomIndex].category
+    end
+    return nil, nil
+end
+
+function startTurnTimer()
+    if turnTimer and isTimer(turnTimer) then killTimer(turnTimer) end
+    turnTimer = setTimer(function()
+        local turnData = actionQueue[currentTurn]
+        local captainName = (turnData.captain == captainElements.Captain1) and captainNames.Captain1 or captainNames.Captain2
+        outputChatBox("Time is up for " .. captainName .. "!", root, 255, 0, 0)
+
+        local randomMap, category = getRandomAvailableMap(turnData.action, turnData.team)
+        if randomMap then
+            if not categoryStats[turnData.team] then categoryStats[turnData.team] = {} end
+            if not categoryStats[turnData.team][category] then categoryStats[turnData.team][category] = {bans = 0, picks = 0} end
+            
+            if turnData.action == "ban" then
+                categoryStats[turnData.team][category].bans = categoryStats[turnData.team][category].bans + 1
+                local teamKey = (turnData.team == "Team1") and "BanTeam1" or "BanTeam2"
+                table.insert(banList[teamKey], randomMap)
+                outputChatBox(captainName .. " didn't pick a map. Randomly banned: " .. randomMap, root, 255, 165, 0)
+                playBanSound()
+            elseif turnData.action == "pick" then
+                categoryStats[turnData.team][category].picks = categoryStats[turnData.team][category].picks + 1
+                local teamKey = (turnData.team == "Team1") and "PickTeam1" or "PickTeam2"
+                table.insert(pickList[teamKey], randomMap)
+                outputChatBox(captainName .. " didn't pick a map. Randomly picked: " .. randomMap, root, 0, 255, 255)
+                playPickSound()
+            end
+
+            for i = #ccMaps[category], 1, -1 do
+                if ccMaps[category][i] == randomMap then table.remove(ccMaps[category], i); break end
+            end
+        else outputChatBox("No available maps for random selection!", root, 255, 0, 0) end
+        playTimeoutSound(); nextTurn()
+    end, 60000, 1)
+    triggerClientEvent(root, "onTurnTimerStart", resourceRoot, 60, actionQueue[currentTurn])
+end
+
+function handleBanPick(action, mapName)
+    if not isProcessActive or isWaitingForReady then return end
+    local turnData = actionQueue[currentTurn]
+    
+    -- Absolute restriction: Even if local validation passes, block unassigned players here.
+    if turnData.captain ~= client then return end
+    
+    local mapCategory = nil
+    for cat, mapPool in pairs(ccMaps) do
+        for _, name in ipairs(mapPool) do if name == mapName then mapCategory = cat break end end
+        if mapCategory then break end
+    end
+    if not mapCategory then return end
+
+    local teamKey = turnData.team
+    if not categoryStats[teamKey] then categoryStats[teamKey] = {} end
+    if not categoryStats[teamKey][mapCategory] then categoryStats[teamKey][mapCategory] = {bans = 0, picks = 0} end
+
+    local playerName = removeHex(getPlayerName(client))
+    
+    if action == "ban" then
+        if categoryStats[teamKey][mapCategory].bans >= cc_ban_limit then
+            outputChatBox("[CC] Limit reached: Your team cannot ban more than " .. cc_ban_limit .. " maps from the '" .. mapCategory .. "' category!", client, 255, 0, 0)
+            return
+        end
+        categoryStats[teamKey][mapCategory].bans = categoryStats[teamKey][mapCategory].bans + 1
+        
+        local tKey = (turnData.team == "Team1") and "BanTeam1" or "BanTeam2"
+        table.insert(banList[tKey], mapName)
+        outputChatBox(playerName .. " banned the map: " .. mapName, root, 255, 165, 0)
+        playBanSound()
+    elseif action == "pick" then
+        if categoryStats[teamKey][mapCategory].picks >= cc_pick_limit then
+            outputChatBox("[CC] Limit reached: Your team cannot pick more than " .. cc_pick_limit .. " maps from the '" .. mapCategory .. "' category!", client, 255, 0, 0)
+            return
+        end
+        categoryStats[teamKey][mapCategory].picks = categoryStats[teamKey][mapCategory].picks + 1
+        
+        local tKey = (turnData.team == "Team1") and "PickTeam1" or "PickTeam2"
+        table.insert(pickList[tKey], mapName)
+        outputChatBox(playerName .. " picked the map: " .. mapName, root, 0, 255, 255)
+        playPickSound()
+    end
+
+    for category, mapPool in pairs(ccMaps) do
+        for i = #mapPool, 1, -1 do
+            if mapPool[i] == mapName then table.remove(mapPool, i); break end
+        end
+    end
+    nextTurn()
+end
+addEvent("onBanPick", true)
+addEventHandler("onBanPick", root, handleBanPick)
+
+function nextTurn()
+    if turnTimer and isTimer(turnTimer) then killTimer(turnTimer) end
+    currentTurn = currentTurn + 1
+    
+    if currentTurn > #actionQueue then
+        isProcessActive = false
+        outputChatBox("[RL] Ban/Pick process complete! Chosen maps have been queued.", root, 0, 255, 0)
+        
+        mapQueue = {}
+        local maxPicks = math.max(#pickList.PickTeam1, #pickList.PickTeam2)
+        for i = 1, maxPicks do
+            if pickList.PickTeam1[i] then table.insert(mapQueue, pickList.PickTeam1[i]) end
+            if pickList.PickTeam2[i] then table.insert(mapQueue, pickList.PickTeam2[i]) end
+        end
+
+        for i, p in ipairs(getElementsByType("player")) do
+            if isAdmin(p) then triggerClientEvent(p, "syncMapQueue", resourceRoot, mapQueue) end
+        end
+
+        outputChatBox("[RL] Captains, please type /rd to ready up and begin the match on the first picked map!", root, 255, 255, 0)
+        
+        -- false = Draft ended normally, keeps H menu accessible
+        triggerClientEvent(root, "onCCProcessEnd", resourceRoot, false)
+        
+        actionQueue = {}
+        currentTurn = 1
+    else
+        local nextCaptainName = (actionQueue[currentTurn].captain == captainElements.Captain1) and captainNames.Captain1 or captainNames.Captain2
+        outputChatBox("It's " .. nextCaptainName .. "'s turn (" .. actionQueue[currentTurn].action .. "). 60 seconds to choose!", root, 0, 255, 0)
+        startTurnTimer()
+    end
+    syncData()
 end

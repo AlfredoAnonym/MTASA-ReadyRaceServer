@@ -2,6 +2,12 @@
     <info author="Gemini_Remix" version="2.0" type="script" name="Race League System" />
     <script src="rl_server.lua" type="server" />
     <script src="rl_client.lua" type="client" />
+    <file src="background_music.mp3" />
+    <file src="background.png" />
+    <file src="extra_image.png" />
+    <file src="pick_sound.mp3" />
+    <file src="ban_sound.mp3" />
+    <file src="timeout_sound.mp3" />
     
     <file src="help.xml" />
     
