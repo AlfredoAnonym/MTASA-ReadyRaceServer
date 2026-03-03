@@ -1,0 +1,7 @@
+- Fix ped spawn glitches. Probably caused by putting the peds manually inside the map, by the map editor. When they are high up, they sometimes glitch and can't be taken (probably due to coordinates being wrong somehow) i guess if they would be spawned via a script it would be much much better
+- Do "zones" like Glen Park, etc.: with their own dedicated bonus system
+- Spread out the peds more on later levels (lvl 7, 8, 9, 10, 11, 12) (there are like over 100+ peds placed in the editor so you can try :D)
+- Do voices or check if ped is a granny or a grandma, then they'll get warped "much slower" to the vehicle, with unique voicelines. Additionally you can somehow make it with https://wiki.multitheftauto.com/wiki/SetPedEnterVehicle but I wasn't able to do that
+- Make exclusively only Los Santos skins for this specific paramedic mission
+- Maybe some random probabilities, like jump to the highway near the skate park can be blocked at some point with an random occurence
+- Colorize the "hospital" and patients text at the beginning
